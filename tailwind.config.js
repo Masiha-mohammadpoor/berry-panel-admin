@@ -14,7 +14,9 @@ module.exports = {
         secondary : colors.blue,
         error : colors.rose,
         warning : colors.amber,
-        success : colors.green
+        success : colors.green,
+        body : "#eef2f6",
+        light : colors.white
       }
     },
   },
