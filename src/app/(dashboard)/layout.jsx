@@ -1,3 +1,4 @@
+import Navigation from "@/components/Navigation";
 import "../globals.css";
 
 export const metadata = {
@@ -13,8 +14,8 @@ export default function RootLayout({ children }) {
           sidebar
         </aside>
         <main className="col-span-4">
-          <header className="bg-light w-full p-6 sticky top-0">
-            header
+          <header className="px-2 py-2 w-full bg-light sticky top-0">
+            <Navigation/>
           </header>
           <section className="mt-3 mx-2 h-screen bg-body rounded-t-xl">
             <section className="rounded-t-xl p-3">

@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .transition {
+    @apply transition-all duration-300;
+  }
+}
