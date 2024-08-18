@@ -13,11 +13,13 @@ import ZoomInMapOutlinedIcon from "@mui/icons-material/ZoomInMapOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import TranslateOutlinedIcon from "@mui/icons-material/TranslateOutlined";
 import GraphicEqOutlinedIcon from "@mui/icons-material/GraphicEqOutlined";
+import MenuIcon from '@mui/icons-material/Menu';
+
 
 const Navigation = () => {
   return (
-    <nav className="flex justify-between items-center px-3">
-      <div className="w-1/2 pr-16">
+    <nav className="flex justify-between items-center px-3 pr-4">
+      <div className="w-96">
         <FormControl variant="outlined" className="w-full">
           <OutlinedInput
             placeholder="search"
@@ -68,7 +70,7 @@ const Navigation = () => {
         </IconButton>
         <Button
           variant="contained"
-          className="px-2 py-2 shadow-none bg-secondary-200 text-secondary-500 hover:bg-secondary-500 hover:text-white w-24 flex justify-between items-center rounded-full"
+          className="px-2 py-2 shadow-none bg-secondary-200 text-secondary-500 hover:bg-secondary-500 hover:text-white hover:shadow-none w-24 flex justify-between items-center rounded-full"
         >
           <Image
             src="/images/user.svg"
