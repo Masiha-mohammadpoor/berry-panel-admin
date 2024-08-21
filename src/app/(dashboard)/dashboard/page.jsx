@@ -1,13 +1,73 @@
-"use client"
+"use client";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import PaymentIcon from "@mui/icons-material/Payment";
 import OutboundIcon from "@mui/icons-material/Outbound";
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
-import StorefrontTwoToneIcon from '@mui/icons-material/StorefrontTwoTone';
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import StorefrontTwoToneIcon from "@mui/icons-material/StorefrontTwoTone";
 import { Button, IconButton } from "@mui/material";
+import Chart from "react-apexcharts";
+
+const options = {
+  stroke: {
+    curve: "smooth",
+    width: 3,
+    colors: ["#fff"],
+  },
+  colors: ["#fff"],
+  chart: {
+    toolbar: { show: false },
+    height: "100",
+    events: {
+      dataPointMouseEnter: function (event) {
+        event.path[0].style.cursor = "pointer";
+      },
+    },
+  },
+  xaxis: {
+    tooltip: {
+      enabled: false,
+    },
+    show: false,
+    labels: {
+      show: false,
+    },
+    axisBorder: {
+      show: false,
+    },
+    axisTicks: {
+      show: false,
+    },
+  },
+  yaxis: {
+    show: false,
+    labels: {
+      show: false,
+    },
+    axisBorder: {
+      show: false,
+    },
+    axisTicks: {
+      show: false,
+    },
+  },
+  grid: { show: false },
+  tooltip: {
+    fillSeriesColor: false,
+    theme: "dark",
+    style: {},
+    marker: {
+      show: false,
+    },
+    x: { show: false },
+    y: {
+      title: {
+        formatter: (seriesName) => `Total Order`,
+      },
+    },
+  },
+};
 
 const Dashboard = () => {
-
   return (
     <section>
       <article className="grid grid-cols-6 gap-x-6">
@@ -45,19 +105,47 @@ const Dashboard = () => {
               <ShoppingBagOutlinedIcon fontSize="small" />
             </IconButton>
             <div className="absolute right-0 top-0">
-            <Button size="small" variant="text" className="capitalize shadow-none text-light">Month</Button>
-            <Button size="small" variant="contained" className="capitalize bg-secondary-500 shadow-none hover:shadow-none hover:bg-secondary-600">Year</Button>
+              <Button
+                size="small"
+                variant="text"
+                className="capitalize shadow-none text-light"
+              >
+                Month
+              </Button>
+              <Button
+                size="small"
+                variant="contained"
+                className="capitalize bg-secondary-500 shadow-none hover:shadow-none hover:bg-secondary-600"
+              >
+                Year
+              </Button>
             </div>
           </div>
-          <div className="flex gap-x-1 mt-3">
-            <h1 className="text-light text-4xl font-semibold">$961</h1>
-            <IconButton className="text-secondary-300 relative -top-1 rotate-180">
-              <OutboundIcon />
-            </IconButton>
+          <div className="w-full flex justify-between items-center gap-x-1 mt-3">
+            <div className="flex flex-col gap-x-1">
+              <div className="flex gap-x-1">
+                <h1 className="text-light text-4xl font-semibold">$961</h1>
+                <IconButton className="text-secondary-300 relative -top-1 rotate-180">
+                  <OutboundIcon />
+                </IconButton>
+              </div>
+              <p className="text-secondary-200 font-semibold mt-4 mb-3">
+                Total Order
+              </p>
+            </div>
+            <div className="z-30 w-40 h-20 p-0 flex items-center">
+              <Chart
+                options={options}
+                series={[
+                  {
+                    data: [35, 44, 9, 54, 45, 66, 41, 69],
+                  },
+                ]}
+                type="line"
+                height={100}
+              />
+            </div>
           </div>
-          <p className="text-secondary-200 font-semibold mt-4 mb-3">
-            Total Order
-          </p>
         </div>
         {/* 3 */}
         <div className="col-span-2 rounded-lg grid grid-rows-2 gap-y-4">
