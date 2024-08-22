@@ -4,10 +4,17 @@ import PaymentIcon from "@mui/icons-material/Payment";
 import OutboundIcon from "@mui/icons-material/Outbound";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import StorefrontTwoToneIcon from "@mui/icons-material/StorefrontTwoTone";
-import { Button, IconButton } from "@mui/material";
+import {
+  Button,
+  FormControl,
+  IconButton,
+  MenuItem,
+  Select,
+} from "@mui/material";
 import Chart from "react-apexcharts";
+import { useState } from "react";
 
-const options = {
+const lineChartOptions = {
   stroke: {
     curve: "smooth",
     width: 3,
@@ -17,11 +24,6 @@ const options = {
   chart: {
     toolbar: { show: false },
     height: "100",
-    events: {
-      dataPointMouseEnter: function (event) {
-        event.path[0].style.cursor = "pointer";
-      },
-    },
   },
   xaxis: {
     tooltip: {
@@ -67,7 +69,91 @@ const options = {
   },
 };
 
+const barChartOptions = {
+  chart: {
+    type: "bar",
+    stacked: true,
+    toolbar: {
+      offsetX: -15,
+      tools: {
+        download: true,
+        selection: false,
+        zoom: false,
+        zoomin: false,
+        zoomout: false,
+        pan: false,
+        reset: false,
+      },
+    },
+    zoom: {
+      enabled: true,
+    },
+  },
+  responsive: [
+    {
+      breakpoint: 480,
+      options: {
+        legend: {
+          position: "bottom",
+          offsetX: -10,
+          offsetY: 0,
+        },
+      },
+    },
+  ],
+  plotOptions: {
+    bar: {
+      horizontal: false,
+      borderRadius: 0,
+      borderRadiusApplication: "end", // 'around', 'end'
+      borderRadiusWhenStacked: "last",
+      columnWidth: 20, // 'all', 'last'
+      dataLabels: {
+        total: {
+          enabled: false,
+        },
+      },
+    },
+  },
+  xaxis: {
+    type: "category",
+    categories: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+  },
+  legend: {
+    position: "bottom",
+    offsetY: 10,
+    markers: {
+      size: 10,
+      shape: "circle",
+      offsetX: -5,
+    },
+    itemMargin: {
+      horizontal: 15,
+    },
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  fill: {
+    opacity: 1,
+  },
+};
+
 const Dashboard = () => {
+  const [time, setTime] = useState("Today");
   return (
     <section>
       <article className="grid grid-cols-6 gap-x-6">
@@ -135,7 +221,7 @@ const Dashboard = () => {
             </div>
             <div className="z-30 w-40 h-20 p-0 flex items-center">
               <Chart
-                options={options}
+                options={lineChartOptions}
                 series={[
                   {
                     data: [35, 44, 9, 54, 45, 66, 41, 69],
@@ -174,7 +260,67 @@ const Dashboard = () => {
         </div>
       </article>
       {/* chart */}
-      <article></article>
+      <article className="grid grid-cols-6 gap-x-6 mt-6">
+        {/* Total Growth */}
+        <div className="col-span-4 bg-light rounded-lg p-4">
+          <div className="w-full flex justify-between items-center">
+            <div className="flex flex-col gap-y-2">
+              <p className="text-xs text-gray-600">Total Growth</p>
+              <h2 className="font-semibold text-xl">$2,324.00</h2>
+            </div>
+            <div>
+              <FormControl fullWidth>
+                <Select
+                  className="rounded-md h-12 font-semibold text-sm"
+                  value={time}
+                  onChange={(e) => setTime(e.target.value)}
+                >
+                  <MenuItem value="Today" className="text-sm">
+                    Today
+                  </MenuItem>
+                  <MenuItem value="Month" className="text-sm">
+                    This Month
+                  </MenuItem>
+                  <MenuItem value="Years" className="text-sm">
+                    This Years
+                  </MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+          </div>
+          <div className="mt-4 pr-5 p-4 h-auto">
+            <Chart
+              options={barChartOptions}
+              series={[
+                {
+                  name: "Investment",
+                  data: [35, 125, 35, 35, 35, 80, 35, 20, 35, 45, 12, 75],
+                  color: "#93c5fd",
+                },
+                {
+                  name: "Loss",
+                  data: [35, 15, 15, 35, 65, 40, 80, 25, 15, 85, 25, 75],
+                  color: "#3b82f6",
+                },
+                {
+                  name: "Profit",
+                  data: [35, 145, 35, 35, 20, 105, 100, 10, 65, 45, 30, 10],
+                  color: "#7c3aed",
+                },
+                {
+                  name: "Maintenance",
+                  data: [0, 0, 75, 0, 0, 115, 0, 0, 0, 0, 150, 0],
+                  color: "#ddd6fe",
+                },
+              ]}
+              height={450}
+              type="bar"
+            />
+          </div>
+        </div>
+        {/* Popular Stocks */}
+        <div className="col-span-2 bg-light rounded-lg p-4"></div>
+      </article>
     </section>
   );
 };

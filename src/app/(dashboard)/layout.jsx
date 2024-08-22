@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           <header className="px-2 py-2 w-full bg-light sticky top-0">
             <Navigation/>
           </header>
-          <section className="mt-3 mx-2 h-screen bg-body rounded-t-xl overflow-y-auto">
+          <section className="mt-3 mx-2 h-screen bg-body rounded-t-xl overflow-y-auto pb-20">
             <section className="rounded-t-xl pt-5 px-10">
               {children}
             </section>
