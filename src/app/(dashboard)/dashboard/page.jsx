@@ -8,152 +8,66 @@ import {
   Button,
   FormControl,
   IconButton,
+  Menu,
   MenuItem,
   Select,
 } from "@mui/material";
 import Chart from "react-apexcharts";
 import { useState } from "react";
+import { lineChartOptions, barChartOptions, areaCharOptions } from "@/constants/chartOptions";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
-const lineChartOptions = {
-  stroke: {
-    curve: "smooth",
-    width: 3,
-    colors: ["#fff"],
+const stocksData = [
+  {
+    id: 1,
+    name: "Bajaj Finery",
+    profit: true,
+    percent: 10,
+    amount: 1839.0,
   },
-  colors: ["#fff"],
-  chart: {
-    toolbar: { show: false },
-    height: "100",
+  {
+    id: 2,
+    name: "TTML",
+    profit: false,
+    percent: 10,
+    amount: 100.0,
   },
-  xaxis: {
-    tooltip: {
-      enabled: false,
-    },
-    show: false,
-    labels: {
-      show: false,
-    },
-    axisBorder: {
-      show: false,
-    },
-    axisTicks: {
-      show: false,
-    },
+  {
+    id: 3,
+    name: "Reliance",
+    profit: true,
+    percent: 10,
+    amount: 200.0,
   },
-  yaxis: {
-    show: false,
-    labels: {
-      show: false,
-    },
-    axisBorder: {
-      show: false,
-    },
-    axisTicks: {
-      show: false,
-    },
+  {
+    id: 4,
+    name: "TTML",
+    profit: false,
+    percent: 10,
+    amount: 189.0,
   },
-  grid: { show: false },
-  tooltip: {
-    fillSeriesColor: false,
-    theme: "dark",
-    style: {},
-    marker: {
-      show: false,
-    },
-    x: { show: false },
-    y: {
-      title: {
-        formatter: (seriesName) => `Total Order`,
-      },
-    },
+  {
+    id: 5,
+    name: "Stolon",
+    profit: false,
+    percent: 10,
+    amount: 189.0,
   },
-};
-
-const barChartOptions = {
-  chart: {
-    type: "bar",
-    stacked: true,
-    toolbar: {
-      offsetX: -15,
-      tools: {
-        download: true,
-        selection: false,
-        zoom: false,
-        zoomin: false,
-        zoomout: false,
-        pan: false,
-        reset: false,
-      },
-    },
-    zoom: {
-      enabled: true,
-    },
-  },
-  responsive: [
-    {
-      breakpoint: 480,
-      options: {
-        legend: {
-          position: "bottom",
-          offsetX: -10,
-          offsetY: 0,
-        },
-      },
-    },
-  ],
-  plotOptions: {
-    bar: {
-      horizontal: false,
-      borderRadius: 0,
-      borderRadiusApplication: "end", // 'around', 'end'
-      borderRadiusWhenStacked: "last",
-      columnWidth: 20, // 'all', 'last'
-      dataLabels: {
-        total: {
-          enabled: false,
-        },
-      },
-    },
-  },
-  xaxis: {
-    type: "category",
-    categories: [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ],
-  },
-  legend: {
-    position: "bottom",
-    offsetY: 10,
-    markers: {
-      size: 10,
-      shape: "circle",
-      offsetX: -5,
-    },
-    itemMargin: {
-      horizontal: 15,
-    },
-  },
-  dataLabels: {
-    enabled: false,
-  },
-  fill: {
-    opacity: 1,
-  },
-};
+];
 
 const Dashboard = () => {
   const [time, setTime] = useState("Today");
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <section>
       <article className="grid grid-cols-6 gap-x-6">
@@ -319,7 +233,114 @@ const Dashboard = () => {
           </div>
         </div>
         {/* Popular Stocks */}
-        <div className="col-span-2 bg-light rounded-lg p-4"></div>
+        <div className="col-span-2 bg-light rounded-lg p-4">
+          <div className="w-full flex justify-between items-center">
+            <h2 className="font-semibold">Popular Stocks</h2>
+            <div>
+              <div className="relative">
+                <IconButton
+                  id="basic-button"
+                  aria-controls={open ? "basic-menu" : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? "true" : undefined}
+                  onClick={handleClick}
+                  className="text-secondary-400 hover:bg-light"
+                >
+                  <MoreHorizIcon />
+                </IconButton>
+                <Menu
+                  id="basic-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  className="absolute -left-20"
+                  MenuListProps={{
+                    "aria-labelledby": "basic-button",
+                  }}
+                >
+                  <MenuItem className="text-sm" onClick={handleClose}>
+                    Today
+                  </MenuItem>
+                  <MenuItem className="text-sm" onClick={handleClose}>
+                    This Month
+                  </MenuItem>
+                  <MenuItem className="text-sm" onClick={handleClose}>
+                    This Year
+                  </MenuItem>
+                </Menu>
+              </div>
+            </div>
+          </div>
+          <div className="mt-3 w-full bg-primary-200 rounded-lg pt-3">
+            <div className="px-3 flex justify-between items-start">
+              <div>
+                <p className="text-primary-700 text-sm font-semibold mb-1">
+                  Bajaj Finery
+                </p>
+                <p className="text-xs">10% Profit</p>
+              </div>
+              <p className="font-semibold text-sm">$1839.00</p>
+            </div>
+            {/* chart */}
+            <div className="mt-4">
+              <div className="ml-2">
+                <Chart
+                  type="area"
+                  height={100}
+                  options={areaCharOptions}
+                  series={[
+                    {
+                      name: "series1",
+                      data: [0, 15, 10, 50, 30, 40, 25],
+                    },
+                  ]}
+                />
+              </div>
+            </div>
+          </div>
+          {/* list */}
+          <div className="mt-8">
+            {/* child */}
+            {stocksData.map((s) => {
+              return (
+                <div
+                  key={s.id}
+                  className={`mb-3 w-full flex justify-between items-start pb-3 ${
+                    s.id !== stocksData.length && "border-b border-b-gray-200"
+                  } `}
+                >
+                  <div>
+                    <p className="text-sm font-semibold mb-1">{s.name}</p>
+                    <p
+                      className={`text-xs ${
+                        s.profit ? "text-success-500" : "text-error-600"
+                      }`}
+                    >
+                      {s.percent}% {s.profit ? "profit" : "loss"}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-x-2">
+                    <p className="text-sm font-semibold">${s.amount.toFixed(2)}</p>
+                    <span
+                      className={`w-5 h-5 flex justify-center items-center rounded-md ${
+                        s.profit
+                          ? "bg-success-200 text-success-500"
+                          : "bg-error-200 text-error-600"
+                      }`}
+                    >
+                      {s.profit ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+            <div className="w-full flex justify-center">
+              <Button variant="text" className="capitalize" size="medium">
+                View All <NavigateNextIcon />
+              </Button>
+            </div>
+          </div>
+        </div>
       </article>
     </section>
   );

@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <StyledEngineProvider injectFirst>
-      <body className={`${inter.className} overflow-hidden grid grid-cols-5`}>
+      <body className={`${inter.className} overflow-hidden grid grid-cols-5 pt-2`}>
       <aside className="bg-light col-span-1 sticky top-0 bottom-0 h-screen">
           <Sidebar />
         </aside>
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           <header className="px-2 py-2 w-full bg-light sticky top-0">
             <Navigation/>
           </header>
-          <section className="mt-3 mx-2 h-screen bg-body rounded-t-xl overflow-y-auto pb-20">
+          <section className="mt-3 mx-2 h-screen bg-body rounded-t-xl overflow-y-auto pb-28 fixed">
             <section className="rounded-t-xl pt-5 px-10">
               {children}
             </section>
