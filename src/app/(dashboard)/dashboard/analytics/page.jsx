@@ -4,14 +4,20 @@ import { IconButton } from "@mui/material";
 import { LuFacebook } from "react-icons/lu";
 import { FiTwitter, FiYoutube } from "react-icons/fi";
 import Chart from "react-apexcharts";
+import SensorsIcon from "@mui/icons-material/Sensors";
+import { GoShareAndroid } from "react-icons/go";
+import WorkspacesOutlinedIcon from "@mui/icons-material/WorkspacesOutlined";
+import { CiCreditCard1 } from "react-icons/ci";
+import { MdOutlineSensors } from "react-icons/md";
+import { TbChartCircles } from "react-icons/tb";
 
 const Analytics = () => {
   return (
     <section>
       {/*  */}
-      <article className="grid grid-cols-6 gap-6">
+      <article className="grid grid-cols-6 gap-6 grid-rows-6">
         {/* 1 */}
-        <div className="relative overflow-hidden col-span-4 bg-light rounded-md pt-8">
+        <div className="relative overflow-hidden col-span-4 bg-light rounded-md pt-8 row-span-6">
           <div className="px-5">
             <div className="flex justify-between items-center">
               <h2 className="font-semibold text-xl">Market Share</h2>
@@ -114,9 +120,50 @@ const Analytics = () => {
             />
           </div>
         </div>
-        <div className="col-span-2 rounded-lg bg-light">2</div>
-        <div className="bg-red-200 col-span-4">3</div>
-        <div className="bg-red-200 col-span-2">4</div>
+        <div className="col-span-2 rounded-lg bg-light row-span-3 grid grid-cols-2 grid-rows-2">
+          <div className="col-span-2 row-span-1 border-b border-b-gray-200 grid grid-cols-2">
+            <div className="flex justify-center items-center gap-x-2">
+              <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
+                <GoShareAndroid />
+              </div>
+              <div>
+                <p className="font-semibold text-sm">1000</p>
+                <p className="text-gray-600 text-xs">SHARES</p>
+              </div>
+            </div>
+            <div className="col-span-1 flex justify-center items-center gap-x-2 border-l border-l-gray-200">
+              <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
+                <MdOutlineSensors />
+              </div>
+              <div>
+                <p className="font-semibold text-sm">600</p>
+                <p className="text-gray-600 text-xs">NETWORK</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-2 row-span-1 grid grid-cols-2">
+            <div className="col-span-1 flex justify-center items-center gap-x-2 ">
+              <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
+                <TbChartCircles />
+              </div>
+              <div>
+                <p className="font-semibold text-sm">3550</p>
+                <p className="text-gray-600 text-xs">RETURNS</p>
+              </div>
+            </div>
+            <div className="col-span-1 flex justify-center items-center gap-x-2 border-l border-r-gray-200">
+              <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
+                <CiCreditCard1 />
+              </div>
+              <div>
+                <p className="font-semibold text-sm">100%</p>
+                <p className="text-gray-600 text-xs">ORDER</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-red-200 col-span-2 row-span-6">3</div>
+        <div className="bg-red-200 col-span-4 row-span-2">4</div>
       </article>
     </section>
   );

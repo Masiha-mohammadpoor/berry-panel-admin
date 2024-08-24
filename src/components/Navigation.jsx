@@ -14,7 +14,7 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import TranslateOutlinedIcon from "@mui/icons-material/TranslateOutlined";
 import GraphicEqOutlinedIcon from "@mui/icons-material/GraphicEqOutlined";
 import MenuIcon from '@mui/icons-material/Menu';
-
+import SensorsIcon from '@mui/icons-material/Sensors';
 
 const Navigation = () => {
   return (
@@ -48,7 +48,7 @@ const Navigation = () => {
           aria-label="delete"
           className="rounded-md transition bg-primary-100 text-primary-800 p-2 hover:bg-primary-800 hover:text-primary-100"
         >
-          <GraphicEqOutlinedIcon />
+          <SensorsIcon />
         </IconButton>
         <IconButton
           aria-label="delete"
