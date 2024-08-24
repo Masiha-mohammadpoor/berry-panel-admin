@@ -227,7 +227,7 @@ const Dashboard = () => {
                   color: "#ddd6fe",
                 },
               ]}
-              height={450}
+              height={500}
               type="bar"
             />
           </div>

@@ -3,6 +3,7 @@ export const lineChartOptions = {
     curve: "smooth",
     width: 3,
     colors: ["#fff"],
+    
   },
   colors: ["#fff"],
   chart: {
@@ -175,11 +176,6 @@ export const areaCharOptions = {
       show: false,
     },
   },
-  tooltip: {
-    x: {
-      format: "dd/MM/yy HH:mm",
-    },
-  },
   fill: {
     type: "gradient",
     gradient: {
@@ -190,4 +186,19 @@ export const areaCharOptions = {
       opacityTo: 0.2,
     },
   },
+  tooltip: {
+    fillSeriesColor: false,
+    theme: "light",
+    style: {},
+    marker: {
+      show: false,
+    },
+    x: { show: false },
+    y: {
+      title: {
+        formatter: (seriesName) => `Ticket`,
+      },
+    },
+  },
+
 }
