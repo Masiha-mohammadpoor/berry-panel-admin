@@ -1,6 +1,15 @@
 "use client";
 import TrendingDownIcon from "@mui/icons-material/TrendingDown";
-import { IconButton } from "@mui/material";
+import {
+  Button,
+  IconButton,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 import { LuFacebook } from "react-icons/lu";
 import { FiTwitter, FiYoutube } from "react-icons/fi";
 import Chart from "react-apexcharts";
@@ -12,6 +21,7 @@ import MonetizationOnTwoToneIcon from "@mui/icons-material/MonetizationOnTwoTone
 import AccountCircleTwoToneIcon from "@mui/icons-material/AccountCircleTwoTone";
 import { IoMdArrowDropup } from "react-icons/io";
 import { IoMdArrowDropdown } from "react-icons/io";
+import Image from "next/image";
 
 const revenueData = [
   {
@@ -76,13 +86,86 @@ const revenueData = [
   },
 ];
 
+const customersData = [
+  {
+    id: 1,
+    name: "John Deo",
+    country: "Brazil",
+    flag: "https://flagcdn.com/br.svg",
+    average: 25.3,
+  },
+  {
+    id: 2,
+    name: "Angelina Jolly",
+    country: "USA",
+    flag: "https://flagcdn.com/us.svg",
+    average: 56.5,
+  },
+  {
+    id: 3,
+    name: "Jenifer Vintage",
+    country: "Germany",
+    flag: "https://flagcdn.com/de.svg",
+    average: 10.4,
+  },
+  {
+    id: 4,
+    name: "Lori Moore",
+    country: "United Kingdom",
+    flag: "https://flagcdn.com/gb.svg",
+    average: 10.02,
+  },
+  {
+    id: 5,
+    name: "Allianz Dacron",
+    country: "Australia",
+    flag: "https://flagcdn.com/au.svg",
+    average: 5.2,
+  },
+  {
+    id: 6,
+    name: "John Deo",
+    country: "Brazil",
+    flag: "https://flagcdn.com/br.svg",
+    average: 25.3,
+  },
+  {
+    id: 7,
+    name: "Angelina Jolly",
+    country: "USA",
+    flag: "https://flagcdn.com/us.svg",
+    average: 56.5,
+  },
+  {
+    id: 8,
+    name: "Jenifer Vintage",
+    country: "Germany",
+    flag: "https://flagcdn.com/de.svg",
+    average: 10.4,
+  },
+  {
+    id: 9,
+    name: "Lori Moore",
+    country: "United Kingdom",
+    flag: "https://flagcdn.com/gb.svg",
+    average: 10.02,
+  },
+  {
+    id: 10,
+    name: "Allianz Dacron",
+    country: "Australia",
+    flag: "https://flagcdn.com/au.svg",
+    average: 5.2,
+  },
+];
+
 const Analytics = () => {
   return (
     <section>
       {/*  */}
       <article className="grid grid-cols-6 gap-6 grid-rows-12">
         {/* 1 */}
-        <div className="relative overflow-hidden col-span-4 bg-light rounded-md pt-8 row-span-6">
+        <div className="relative overflow-hidden col-span-4 bg-light rounded-md pt-8 row-span-5">
           <div className="px-5">
             <div className="flex justify-between items-center">
               <h2 className="font-semibold text-xl">Market Share</h2>
@@ -229,14 +312,19 @@ const Analytics = () => {
           </div>
         </div>
         {/* 3 */}
-        <div className="rounded-md col-span-2 row-span-7 bg-light">
-          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-300">
+        <div className="rounded-md col-span-2 row-span-6 bg-light">
+          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
             Total Revenue
           </h2>
-          <div className="h-96 overflow-y-auto revenueList">
+          <div className="h-[25rem] overflow-y-auto revenueList">
             {revenueData.map((r) => {
               return (
-                <div key={r.id} className={`flex justify-between items-center p-3 ${r.id !== revenueData.length && "border-b border-b-gray-300"}`}>
+                <div
+                  key={r.id}
+                  className={`flex justify-between items-center p-4 ${
+                    r.id !== revenueData.length && "border-b border-b-gray-200"
+                  }`}
+                >
                   <div className="flex items-center gap-x-3">
                     {r.profit ? (
                       <IoMdArrowDropup className="text-success-500 text-lg" />
@@ -279,6 +367,60 @@ const Analytics = () => {
               <AccountCircleTwoToneIcon className="w-24 h-24 text-secondary-300" />
             </div>
           </div>
+        </div>
+        {/* 5 */}
+        <div className="bg-light rounded-md col-span-4 row-span-10">
+          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
+            Latest Customers
+          </h2>
+          <TableContainer sx={{ maxHeight: "24rem" }} className="revenueList">
+            <Table stickyHeader>
+              <TableHead>
+                <TableRow>
+                  <TableCell className="font-bold" align="left">
+                    #
+                  </TableCell>
+                  <TableCell className="font-bold" align="left">
+                    Country
+                  </TableCell>
+                  <TableCell className="font-bold" align="left">
+                    Name
+                  </TableCell>
+                  <TableCell className="font-bold" align="center">
+                    Average
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {customersData.map((c) => {
+                  return (
+                    <TableRow key={c.id}>
+                      <TableCell align="left">
+                        <Image
+                          src={c.flag}
+                          alt={c.country}
+                          width={30}
+                          height={30}
+                        />
+                      </TableCell>
+                      <TableCell align="left">{c.country}</TableCell>
+                      <TableCell align="left">{c.name}</TableCell>
+                      <TableCell align="center">{c.average}%</TableCell>
+                    </TableRow>
+                  );
+                })}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <div className="p-5 border-t-2 border-b-gray-200 flex justify-end items-center">
+            <Button variant="text" className="capitalize text-sm">
+              View All Latest Customers
+            </Button>
+          </div>
+        </div>
+        {/* 6 */}
+        <div className="col-span-2 bg-red-300">
+          <div></div>
         </div>
       </article>
     </section>
