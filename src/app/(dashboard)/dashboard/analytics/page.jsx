@@ -4,18 +4,83 @@ import { IconButton } from "@mui/material";
 import { LuFacebook } from "react-icons/lu";
 import { FiTwitter, FiYoutube } from "react-icons/fi";
 import Chart from "react-apexcharts";
-import SensorsIcon from "@mui/icons-material/Sensors";
 import { GoShareAndroid } from "react-icons/go";
-import WorkspacesOutlinedIcon from "@mui/icons-material/WorkspacesOutlined";
 import { CiCreditCard1 } from "react-icons/ci";
 import { MdOutlineSensors } from "react-icons/md";
 import { TbChartCircles } from "react-icons/tb";
+import MonetizationOnTwoToneIcon from "@mui/icons-material/MonetizationOnTwoTone";
+import AccountCircleTwoToneIcon from "@mui/icons-material/AccountCircleTwoTone";
+import { IoMdArrowDropup } from "react-icons/io";
+import { IoMdArrowDropdown } from "react-icons/io";
+
+const revenueData = [
+  {
+    id: 1,
+    name: "Bitcoin",
+    profit: true,
+    amount: 145.85,
+  },
+  {
+    id: 2,
+    name: "Ethereum",
+    profit: false,
+    amount: 6.368,
+  },
+  {
+    id: 3,
+    name: "Ripple",
+    profit: true,
+    amount: 458.63,
+  },
+  {
+    id: 4,
+    name: "Neo",
+    profit: false,
+    amount: 5.631,
+  },
+  {
+    id: 5,
+    name: "Ethereum",
+    profit: false,
+    amount: 6.368,
+  },
+  {
+    id: 6,
+    name: "Ripple",
+    profit: true,
+    amount: 458.63,
+  },
+  {
+    id: 7,
+    name: "Neo",
+    profit: false,
+    amount: 5.631,
+  },
+  {
+    id: 8,
+    name: "Ethereum",
+    profit: false,
+    amount: 6.368,
+  },
+  {
+    id: 9,
+    name: "Ripple",
+    profit: true,
+    amount: 458.63,
+  },
+  {
+    id: 10,
+    name: "Neo",
+    profit: false,
+    amount: 5.631,
+  },
+];
 
 const Analytics = () => {
   return (
     <section>
       {/*  */}
-      <article className="grid grid-cols-6 gap-6 grid-rows-6">
+      <article className="grid grid-cols-6 gap-6 grid-rows-12">
         {/* 1 */}
         <div className="relative overflow-hidden col-span-4 bg-light rounded-md pt-8 row-span-6">
           <div className="px-5">
@@ -120,9 +185,10 @@ const Analytics = () => {
             />
           </div>
         </div>
-        <div className="col-span-2 rounded-lg bg-light row-span-3 grid grid-cols-2 grid-rows-2">
+        {/* 2 */}
+        <div className="col-span-2 row-span-3 rounded-md bg-light grid grid-cols-2 grid-rows-2">
           <div className="col-span-2 row-span-1 border-b border-b-gray-200 grid grid-cols-2">
-            <div className="flex justify-center items-center gap-x-2">
+            <div className="flex justify-start items-center gap-x-2 pl-5">
               <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
                 <GoShareAndroid />
               </div>
@@ -131,7 +197,7 @@ const Analytics = () => {
                 <p className="text-gray-600 text-xs">SHARES</p>
               </div>
             </div>
-            <div className="col-span-1 flex justify-center items-center gap-x-2 border-l border-l-gray-200">
+            <div className="col-span-1 flex justify-start items-center gap-x-2 pl-5 border-l border-l-gray-200">
               <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
                 <MdOutlineSensors />
               </div>
@@ -142,7 +208,7 @@ const Analytics = () => {
             </div>
           </div>
           <div className="col-span-2 row-span-1 grid grid-cols-2">
-            <div className="col-span-1 flex justify-center items-center gap-x-2 ">
+            <div className="col-span-1 flex justify-start items-center gap-x-2  pl-5">
               <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
                 <TbChartCircles />
               </div>
@@ -151,7 +217,7 @@ const Analytics = () => {
                 <p className="text-gray-600 text-xs">RETURNS</p>
               </div>
             </div>
-            <div className="col-span-1 flex justify-center items-center gap-x-2 border-l border-r-gray-200">
+            <div className="col-span-1 flex justify-start items-center gap-x-2 pl-5 border-l border-r-gray-200">
               <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
                 <CiCreditCard1 />
               </div>
@@ -162,8 +228,58 @@ const Analytics = () => {
             </div>
           </div>
         </div>
-        <div className="bg-red-200 col-span-2 row-span-6">3</div>
-        <div className="bg-red-200 col-span-4 row-span-2">4</div>
+        {/* 3 */}
+        <div className="rounded-md col-span-2 row-span-7 bg-light">
+          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-300">
+            Total Revenue
+          </h2>
+          <div className="h-96 overflow-y-auto revenueList">
+            {revenueData.map((r) => {
+              return (
+                <div key={r.id} className={`flex justify-between items-center p-3 ${r.id !== revenueData.length && "border-b border-b-gray-300"}`}>
+                  <div className="flex items-center gap-x-3">
+                    {r.profit ? (
+                      <IoMdArrowDropup className="text-success-500 text-lg" />
+                    ) : (
+                      <IoMdArrowDropdown className="text-error-600 text-lg" />
+                    )}
+                    <p className="text-sm">{r.name}</p>
+                  </div>
+                  <div>
+                    {r.profit ? (
+                      <p className="text-success-500 text-sm">+ {r.amount}</p>
+                    ) : (
+                      <p className="text-error-600 text-sm">- {r.amount}</p>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        {/* 4 */}
+        <div className="col-span-4 row-span-2 grid grid-cols-2 gap-x-6">
+          <div className="col-span-1 flex justify-between items-center pl-6 pr-5 py-2 rounded-md bg-primary-700">
+            <div className="text-white flex flex-col gap-y-1">
+              <p className="text-sm font-bold">Revenue</p>
+              <h3 className="text-lg font-semibold">$42,562</h3>
+              <p className="text-xs">$50,032 Last Month</p>
+            </div>
+            <div>
+              <MonetizationOnTwoToneIcon className="w-24 h-24 text-primary-400" />
+            </div>
+          </div>
+          <div className="col-span-1 flex justify-between items-center pl-6 pr-5 py-2 rounded-md bg-secondary-500">
+            <div className="text-white flex flex-col gap-y-1">
+              <p className="text-sm font-bold">Orders Received</p>
+              <h3 className="text-lg font-semibold">486</h3>
+              <p className="text-xs">20% Increase</p>
+            </div>
+            <div>
+              <AccountCircleTwoToneIcon className="w-24 h-24 text-secondary-300" />
+            </div>
+          </div>
+        </div>
       </article>
     </section>
   );
