@@ -2,11 +2,13 @@ import { IoHome } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
 import InsertChartTwoToneIcon from '@mui/icons-material/InsertChartTwoTone';
 import CalendarTodayTwoToneIcon from '@mui/icons-material/CalendarTodayTwoTone';
-import InsertDriveFileTwoToneIcon from '@mui/icons-material/InsertDriveFileTwoTone';
 import ThumbDownAltTwoToneIcon from '@mui/icons-material/ThumbDownAltTwoTone';
 import MonetizationOnTwoToneIcon from "@mui/icons-material/MonetizationOnTwoTone";
 import AccountCircleTwoToneIcon from "@mui/icons-material/AccountCircleTwoTone";
 import ShoppingBagTwoToneIcon from '@mui/icons-material/ShoppingBagTwoTone';
+import DescriptionTwoToneIcon from '@mui/icons-material/DescriptionTwoTone';
+import BugReportTwoToneIcon from '@mui/icons-material/BugReportTwoTone';
+import FolderOpenTwoToneIcon from '@mui/icons-material/FolderOpenTwoTone';
 
 
 
@@ -43,7 +45,7 @@ const Statistics = () => {
           <h3 className="text-lg font-semibold">290+</h3>
           <p className="text-gray-600 font-light">Page Views</p>
         </div>
-        <div><InsertDriveFileTwoToneIcon className="w-10 h-10 text-success-500"/></div>
+        <div><DescriptionTwoToneIcon className="w-10 h-10 text-success-500"/></div>
       </div>
       <div className="bg-light rounded-md col-span-3 p-6 flex justify-between items-center">
         <div className="flex flex-col gap-y-1">
@@ -84,6 +86,37 @@ const Statistics = () => {
             <div>
               <ShoppingBagTwoToneIcon className="w-24 h-24 text-error-300" />
             </div>
+          </div>
+      </article>
+      {/* 4 */}
+      <article className="grid grid-cols-12 gap-x-6">
+          <div className="col-span-3 bg-light rounded-md p-6 flex justify-between items-center">
+            <div className="flex flex-col gap-y-1">
+              <div><AccountCircleTwoToneIcon className="w-7 h-7 text-secondary-500"/></div>
+              <p className="text-sm font-bold">Visitors</p>
+            </div>
+            <div className="text-lg font-semibold text-gray-700">6035</div>
+          </div>
+          <div className="col-span-3 bg-light rounded-md p-6 flex justify-between items-center">
+            <div className="flex flex-col gap-y-1">
+            <div><DescriptionTwoToneIcon className="w-7 h-7 text-error-500"/></div>
+            <p className="text-sm font-bold">Invoices</p>
+            </div>
+            <div className="text-lg font-semibold text-gray-700">19</div>
+          </div>
+          <div className="col-span-3 bg-light rounded-md p-6 flex justify-between items-center">
+            <div className="flex flex-col gap-y-1">
+            <div><BugReportTwoToneIcon className="w-7 h-7 text-warning-500"/></div>
+            <p className="text-sm font-bold">Issues</p>
+            </div>
+            <div className="text-lg font-semibold text-gray-700">63</div>
+          </div>
+          <div className="col-span-3 bg-light rounded-md p-6 flex justify-between items-center">
+            <div className="flex flex-col gap-y-1">
+            <div><FolderOpenTwoToneIcon className="w-7 h-7 text-success-500"/></div>
+            <p className="text-sm font-bold">Projects</p>
+            </div>
+            <div className="text-lg font-semibold text-gray-700">95%</div>
           </div>
       </article>
     </section>
