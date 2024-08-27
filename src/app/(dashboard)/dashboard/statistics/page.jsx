@@ -4,6 +4,11 @@ import InsertChartTwoToneIcon from '@mui/icons-material/InsertChartTwoTone';
 import CalendarTodayTwoToneIcon from '@mui/icons-material/CalendarTodayTwoTone';
 import InsertDriveFileTwoToneIcon from '@mui/icons-material/InsertDriveFileTwoTone';
 import ThumbDownAltTwoToneIcon from '@mui/icons-material/ThumbDownAltTwoTone';
+import MonetizationOnTwoToneIcon from "@mui/icons-material/MonetizationOnTwoTone";
+import AccountCircleTwoToneIcon from "@mui/icons-material/AccountCircleTwoTone";
+import ShoppingBagTwoToneIcon from '@mui/icons-material/ShoppingBagTwoTone';
+
+
 
 const Statistics = () => {
   return (
@@ -47,6 +52,39 @@ const Statistics = () => {
         </div>
         <div><ThumbDownAltTwoToneIcon className="w-10 h-10 text-secondary-500"/></div>
       </div>
+      </article>
+      {/* 3 */}
+      <article className="grid grid-cols-12 gap-x-6">
+      <div className="h-32 col-span-4 flex justify-between items-center pl-6 pr-5 py-2 rounded-md bg-primary-700">
+            <div className="text-white flex flex-col gap-y-1">
+              <p className="text-sm font-bold">Revenue</p>
+              <h3 className="text-lg font-semibold">$42,562</h3>
+              <p className="text-xs">$50,032 Last Month</p>
+            </div>
+            <div>
+              <MonetizationOnTwoToneIcon className="w-24 h-24 text-primary-400" />
+            </div>
+          </div>
+          <div className="h-32 col-span-4 flex justify-between items-center pl-6 pr-5 py-2 rounded-md bg-secondary-500">
+            <div className="text-white flex flex-col gap-y-1">
+              <p className="text-sm font-bold">Orders Received</p>
+              <h3 className="text-lg font-semibold">486</h3>
+              <p className="text-xs">20% Increase</p>
+            </div>
+            <div>
+              <AccountCircleTwoToneIcon className="w-24 h-24 text-secondary-300" />
+            </div>
+          </div>
+          <div className="h-32 col-span-4 flex justify-between items-center pl-5 pr-5 py-2 rounded-md bg-error-600">
+            <div className="text-white flex flex-col gap-y-1">
+              <p className="text-sm font-bold">Total Sales</p>
+              <h3 className="text-lg font-semibold">1641</h3>
+              <p className="text-xs">$1,055 Revenue Generated</p>
+            </div>
+            <div>
+              <ShoppingBagTwoToneIcon className="w-24 h-24 text-error-300" />
+            </div>
+          </div>
       </article>
     </section>
   );
