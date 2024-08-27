@@ -64,13 +64,15 @@ const Sidebar = () => {
         <div className={`w-full ${openMenu && "mt-5"}`}>
           <h2 className={`mb-4 text-sm font-bold ${!openMenu && "hidden"}`}>Widget</h2>
           <div>
+          <Link href="/dashboard/statistics">
             <IconButton
               variant="contained"
-              className={`mx-auto transition mb-1 flex ${openMenu ? "w-full pl-5 py-3 gap-x-4 justify-start" : "p-3"} hover:bg-primary-100 hover:text-primary-800 hover:shadow-none rounded-lg shadow-none text-black capitalize`}
+              className={`mx-auto transition mb-1 flex ${openMenu ? "w-full pl-5 py-3 gap-x-4 justify-start" : "p-3"} ${pathname ==="/dashboard/statistics" ?"bg-primary-100 text-primary-800": "bg-light"} hover:bg-primary-100 hover:text-primary-800 hover:shadow-none rounded-lg shadow-none text-black capitalize`}
             >
               <DataSaverOffOutlinedIcon />
               <span className={`${!openMenu && "hidden"} text-sm`}>Statistics</span>
             </IconButton>
+            </Link>
             <IconButton
               variant="contained"
               className={`mx-auto transition mb-1 flex ${openMenu ? "w-full pl-5 py-3 gap-x-4 justify-start" : "p-3"} hover:bg-primary-100 hover:text-primary-800 hover:shadow-none rounded-lg shadow-none text-black capitalize`}
