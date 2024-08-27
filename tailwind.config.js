@@ -9,6 +9,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gridColumn: {
+        'span-15': 'span 15 / span 15',
+      },
+      gridTemplateColumns: {
+        '16': 'repeat(16, minmax(0, 1fr));',
+      },
       colors : {
         primary : colors.violet,
         secondary : colors.sky,

@@ -1,27 +1,28 @@
+"use client"
 import Navigation from "@/components/Navigation";
 import "../globals.css";
 import Sidebar from "@/components/Sidebar";
 import { StyledEngineProvider } from "@mui/material/styles";
 import { Inter } from "next/font/google";
+import useMenu from "@/hooks/useMenu";
 
-export const metadata = {
-  title: "dashborad",
-  description: "dashboard",
-};
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
+
+  const {openMenu} = useMenu();
+
   return (
     <html lang="en">
       <StyledEngineProvider injectFirst>
         <body
-          className={`${inter.className} overflow-hidden grid grid-cols-5 pt-2`}
+          className={`${inter.className} transition overflow-hidden grid ${openMenu ? "grid-cols-5" : "grid-cols-16"} pt-2`}
         >
-          <aside className="bg-light col-span-1 sticky top-0 bottom-0 h-screen">
+          <aside className={` col-span-1 bg-light sticky top-0 bottom-0 h-screen`}>
             <Sidebar />
           </aside>
-          <main className="col-span-4 grid grid-cols-1 overflow-hidden mx-2">
+          <main className={`transition ${openMenu ? "col-span-4" : "col-span-15"} grid grid-cols-1 overflow-hidden mx-2`}>
             <header className="col-span-1 px-2 py-2 sticky top-0 h-16">
               <Navigation />
             </header>
