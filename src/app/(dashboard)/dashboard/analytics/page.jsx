@@ -22,6 +22,7 @@ import AccountCircleTwoToneIcon from "@mui/icons-material/AccountCircleTwoTone";
 import { IoMdArrowDropup } from "react-icons/io";
 import { IoMdArrowDropdown } from "react-icons/io";
 import Image from "next/image";
+import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 
 const revenueData = [
   {
@@ -163,9 +164,9 @@ const Analytics = () => {
   return (
     <section>
       {/*  */}
-      <article className="grid grid-cols-6 gap-6 grid-rows-12">
+      <article className="grid grid-cols-6 gap-6 auto-rows-auto">
         {/* 1 */}
-        <div className="relative overflow-hidden col-span-4 bg-light rounded-md pt-8 row-span-5">
+        <div className="relative overflow-hidden col-span-4 bg-light rounded-md pt-8 row-span-6">
           <div className="px-5">
             <div className="flex justify-between items-center">
               <h2 className="font-semibold text-xl">Market Share</h2>
@@ -269,9 +270,9 @@ const Analytics = () => {
           </div>
         </div>
         {/* 2 */}
-        <div className="col-span-2 row-span-3 rounded-md bg-light grid grid-cols-2 grid-rows-2">
+        <div className="col-span-2 row-span-2 rounded-md bg-light grid grid-cols-2 grid-rows-2">
           <div className="col-span-2 row-span-1 border-b border-b-gray-200 grid grid-cols-2">
-            <div className="flex justify-start items-center gap-x-2 pl-5">
+            <div className="flex justify-start items-center gap-x-2 pl-5 py-5">
               <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
                 <GoShareAndroid />
               </div>
@@ -280,7 +281,7 @@ const Analytics = () => {
                 <p className="text-gray-600 text-xs">SHARES</p>
               </div>
             </div>
-            <div className="col-span-1 flex justify-start items-center gap-x-2 pl-5 border-l border-l-gray-200">
+            <div className="col-span-1 flex justify-start items-center py-5 gap-x-2 pl-5 border-l border-l-gray-200">
               <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
                 <MdOutlineSensors />
               </div>
@@ -291,7 +292,7 @@ const Analytics = () => {
             </div>
           </div>
           <div className="col-span-2 row-span-1 grid grid-cols-2">
-            <div className="col-span-1 flex justify-start items-center gap-x-2  pl-5">
+            <div className="col-span-1 flex justify-start items-center gap-x-2  pl-5  py-5">
               <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
                 <TbChartCircles />
               </div>
@@ -300,7 +301,7 @@ const Analytics = () => {
                 <p className="text-gray-600 text-xs">RETURNS</p>
               </div>
             </div>
-            <div className="col-span-1 flex justify-start items-center gap-x-2 pl-5 border-l border-r-gray-200">
+            <div className="col-span-1 flex justify-start items-center gap-x-2 pl-5 py-5 border-l border-r-gray-200">
               <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
                 <CiCreditCard1 />
               </div>
@@ -312,7 +313,7 @@ const Analytics = () => {
           </div>
         </div>
         {/* 3 */}
-        <div className="rounded-md col-span-2 row-span-6 bg-light">
+        <div className="rounded-md col-span-2 bg-light row-span-7">
           <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
             Total Revenue
           </h2>
@@ -369,7 +370,7 @@ const Analytics = () => {
           </div>
         </div>
         {/* 5 */}
-        <div className="bg-light rounded-md col-span-4 row-span-10">
+        <div className="bg-light rounded-md col-span-4 row-span-9">
           <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
             Latest Customers
           </h2>
@@ -419,8 +420,23 @@ const Analytics = () => {
           </div>
         </div>
         {/* 6 */}
-        <div className="col-span-2 bg-red-300">
-          <div></div>
+        <div className="col-span-2 w-full flex flex-col justify-center gap-y-6">
+          <div className="relative overflow-hidden flex justify-center items-center bg-primary-700 rounded-md p-8">
+            <div className="absolute -left-4 -bottom-5">
+              <AccountCircleTwoToneIcon className="w-24 h-24 text-primary-400 rotate-[35deg]" />
+            </div>
+            <div className="flex flex-col justify-center items-center text-white">
+              <h3 className="font-bold">1,658</h3>
+              <p className="text-sm">Daily user</p>
+            </div>
+          </div>
+          <div className="relative overflow-hidden flex justify-center items-center bg-secondary-500 rounded-md p-8">
+            <div className="absolute -left-4 -bottom-5"><DescriptionOutlinedIcon className="w-24 h-24 text-secondary-300 rotate-[35deg]" /></div>
+            <div className="flex flex-col justify-center items-center text-white">
+              <h3 className="font-bold">1K</h3>
+              <p className="text-sm">Daily page view</p>
+            </div>
+          </div>
         </div>
       </article>
     </section>
