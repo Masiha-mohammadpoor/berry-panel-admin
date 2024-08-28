@@ -12,6 +12,8 @@ import FolderOpenTwoToneIcon from "@mui/icons-material/FolderOpenTwoTone";
 import AccountBalanceWalletTwoToneIcon from "@mui/icons-material/AccountBalanceWalletTwoTone";
 import EmojiEmotionsTwoToneIcon from "@mui/icons-material/EmojiEmotionsTwoTone";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
+import ArrowDownwardTwoToneIcon from "@mui/icons-material/ArrowDownwardTwoTone";
+import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
 
 const Statistics = () => {
   return (
@@ -177,6 +179,41 @@ const Statistics = () => {
             <p className="text-lg font-semibold">3,619</p>
             <p className="text-sm font-light">New order</p>
           </div>
+        </div>
+      </article>
+      {/* 6 */}
+      <article className="grid grid-cols-12 gap-x-6">
+        <div className="col-span-3 p-6 bg-light rounded-md flex flex-col justify-center items-center gap-y-3">
+          <p className="text-sm font-semibold">Total Paid Users</p>
+          <div className="flex items-center gap-x-2">
+            <ArrowDownwardTwoToneIcon className="text-error-500"/>
+            <h3 className="text-lg font-semibold">7652</h3>
+          </div>
+          <p className="text-xs text-gray-600">8% less Last 3 Months</p>
+        </div>
+        <div className="col-span-3 p-6 bg-light rounded-md flex flex-col justify-center items-center gap-y-3">
+          <p className="text-sm font-semibold">Order Status</p>
+          <div className="flex items-center gap-x-2">
+            <ArrowUpwardTwoToneIcon className="text-success-500"/>
+            <h3 className="text-lg font-semibold">625</h3>
+          </div>
+          <p className="text-xs text-gray-600">6% From Last 3 Months</p>
+        </div>
+        <div className="col-span-3 p-6 bg-light rounded-md flex flex-col justify-center items-center gap-y-3">
+          <p className="text-sm font-semibold">Unique Visitors</p>
+          <div className="flex items-center gap-x-2">
+            <ArrowDownwardTwoToneIcon className="text-error-500"/>
+            <h3 className="text-lg font-semibold">6522</h3>
+          </div>
+          <p className="text-xs text-gray-600">10% From Last 6 Months</p>
+        </div>
+        <div className="col-span-3 p-6 bg-light rounded-md flex flex-col justify-center items-center gap-y-3">
+          <p className="text-sm font-semibold">Monthly Earnings</p>
+          <div className="flex items-center gap-x-2">
+            <ArrowUpwardTwoToneIcon className="text-success-500"/>
+            <h3 className="text-lg font-semibold">5963</h3>
+          </div>
+          <p className="text-xs text-gray-600">36% From Last 6 Months</p>
         </div>
       </article>
     </section>
