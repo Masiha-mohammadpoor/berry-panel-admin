@@ -21,6 +21,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import VisibilityTwoToneIcon from '@mui/icons-material/VisibilityTwoTone';
 import AdjustTwoToneIcon from '@mui/icons-material/AdjustTwoTone';
 import PanToolTwoToneIcon from '@mui/icons-material/PanToolTwoTone';
+import { LinearProgress } from "@mui/material";
 
 const Statistics = () => {
   return (
@@ -279,6 +280,29 @@ const Statistics = () => {
               <p className="text-xs text-gray-600">May 30 - June 01 (2018)</p>
             </div>
             <div className="w-11 h-11 flex justify-center items-center rounded-full bg-warning-200"><PanToolTwoToneIcon className="w-6 h-6 text-warning-600"/></div>
+          </div>
+      </article>
+      {/* 9 */}
+      <article className="grid grid-cols-12 gap-x-6 rounded-md bg-light p-5">
+          <div className="col-span-3 flex flex-col gap-y-2">
+            <p className="text-xs text-gray-600">Published Project</p>
+            <h3 className="text-lg font-semibold">532</h3>
+            <LinearProgress variant="buffer" color="secondary" value={30}/>
+          </div>
+          <div className="col-span-3 flex flex-col gap-y-2">
+            <p className="text-xs text-gray-600">Completed Task</p>
+            <h3 className="text-lg font-semibold">4,569</h3>
+            <LinearProgress variant="buffer" color="success" value={75}/>
+          </div>
+          <div className="col-span-3 flex flex-col gap-y-2">
+            <p className="text-xs text-gray-600">Pending Task</p>
+            <h3 className="text-lg font-semibold">1,005</h3>
+            <LinearProgress variant="buffer" color="warning" value={25}/>
+          </div>
+          <div className="col-span-3 flex flex-col gap-y-2">
+            <p className="text-xs text-gray-600">Issues</p>
+            <h3 className="text-lg font-semibold">365</h3>
+            <LinearProgress variant="buffer" color="error" value={10}/>
           </div>
       </article>
     </section>
