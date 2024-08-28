@@ -14,6 +14,10 @@ import EmojiEmotionsTwoToneIcon from "@mui/icons-material/EmojiEmotionsTwoTone";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
 import ArrowDownwardTwoToneIcon from "@mui/icons-material/ArrowDownwardTwoTone";
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const Statistics = () => {
   return (
@@ -214,6 +218,37 @@ const Statistics = () => {
             <h3 className="text-lg font-semibold">5963</h3>
           </div>
           <p className="text-xs text-gray-600">36% From Last 6 Months</p>
+        </div>
+      </article>
+      {/* 7 */}
+      <article className="grid grid-cols-12 gap-x-6">
+        <div className="col-span-3 p-6 rounded-md bg-primary-500 flex justify-between items-center">
+            <div className="text-white">
+              <h3 className="text-lg font-bold">1165 +</h3>
+              <p className="text-xs font-semibold">Facebook Users</p>
+            </div>
+            <div><FacebookIcon className="transition-all duration-300 w-10 h-10 text-white opacity-40 hover:opacity-100 hover:scale-125"/></div>
+        </div>
+        <div className="col-span-3 p-6 rounded-md bg-secondary-500 flex justify-between items-center">
+            <div className="text-white">
+              <h3 className="text-lg font-bold">780 +</h3>
+              <p className="text-xs font-semibold">Twitter Users</p>
+            </div>
+            <div><TwitterIcon className="transition-all duration-300 w-10 h-10 text-white opacity-40 hover:opacity-100 hover:scale-125"/></div>
+        </div>
+        <div className="col-span-3 p-6 rounded-md bg-slate-800 flex justify-between items-center">
+            <div className="text-white">
+              <h3 className="text-lg font-bold">998 +</h3>
+              <p className="text-xs font-semibold">Linked Users</p>
+            </div>
+            <div><LinkedInIcon className="transition-all duration-300 w-10 h-10 text-white opacity-40 hover:opacity-100 hover:scale-125"/></div>
+        </div>
+        <div className="col-span-3 p-6 rounded-md bg-rose-500 flex justify-between items-center">
+            <div className="text-white">
+              <h3 className="text-lg font-bold">650 +</h3>
+              <p className="text-xs font-semibold">Youtube Videos</p>
+            </div>
+            <div><YouTubeIcon className="transition-all duration-300 w-10 h-10 text-white opacity-40 hover:opacity-100 hover:scale-125"/></div>
         </div>
       </article>
     </section>
