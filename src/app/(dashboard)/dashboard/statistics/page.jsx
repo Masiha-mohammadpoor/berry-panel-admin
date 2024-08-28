@@ -18,6 +18,9 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import VisibilityTwoToneIcon from '@mui/icons-material/VisibilityTwoTone';
+import AdjustTwoToneIcon from '@mui/icons-material/AdjustTwoTone';
+import PanToolTwoToneIcon from '@mui/icons-material/PanToolTwoTone';
 
 const Statistics = () => {
   return (
@@ -250,6 +253,33 @@ const Statistics = () => {
             </div>
             <div><YouTubeIcon className="transition-all duration-300 w-10 h-10 text-white opacity-40 hover:opacity-100 hover:scale-125"/></div>
         </div>
+      </article>
+      {/* 8 */}
+      <article className="grid grid-cols-12 gap-x-6">
+          <div className="col-span-4 bg-light rounded-md p-6 flex justify-between items-center">
+            <div className="flex flex-col gap-y-2">
+              <p className="text-sm font-semibold">Impressions</p>
+              <h3 className="text-lg font-bold">1,563</h3>
+              <p className="text-xs text-gray-600">May 23 - June 01 (2018)</p>
+            </div>
+            <div className="w-11 h-11 flex justify-center items-center rounded-full bg-secondary-200"><VisibilityTwoToneIcon className="w-6 h-6 text-secondary-600"/></div>
+          </div>
+          <div className="col-span-4 bg-light rounded-md p-6 flex justify-between items-center">
+            <div className="flex flex-col gap-y-2">
+              <p className="text-sm font-semibold">Goal</p>
+              <h3 className="text-lg font-bold">30,564</h3>
+              <p className="text-xs text-gray-600">May 28 - June 01 (2018)</p>
+            </div>
+            <div className="w-11 h-11 flex justify-center items-center rounded-full bg-success-200"><AdjustTwoToneIcon className="w-6 h-6 text-success-600"/></div>
+          </div>
+          <div className="col-span-4 bg-light rounded-md p-6 flex justify-between items-center">
+            <div className="flex flex-col gap-y-2">
+              <p className="text-sm font-semibold">Impact</p>
+              <h3 className="text-lg font-bold">42.6%</h3>
+              <p className="text-xs text-gray-600">May 30 - June 01 (2018)</p>
+            </div>
+            <div className="w-11 h-11 flex justify-center items-center rounded-full bg-warning-200"><PanToolTwoToneIcon className="w-6 h-6 text-warning-600"/></div>
+          </div>
       </article>
     </section>
   );
