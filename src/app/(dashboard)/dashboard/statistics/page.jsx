@@ -13,15 +13,17 @@ import AccountBalanceWalletTwoToneIcon from "@mui/icons-material/AccountBalanceW
 import EmojiEmotionsTwoToneIcon from "@mui/icons-material/EmojiEmotionsTwoTone";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
 import ArrowDownwardTwoToneIcon from "@mui/icons-material/ArrowDownwardTwoTone";
-import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import VisibilityTwoToneIcon from '@mui/icons-material/VisibilityTwoTone';
-import AdjustTwoToneIcon from '@mui/icons-material/AdjustTwoTone';
-import PanToolTwoToneIcon from '@mui/icons-material/PanToolTwoTone';
+import ArrowUpwardTwoToneIcon from "@mui/icons-material/ArrowUpwardTwoTone";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import VisibilityTwoToneIcon from "@mui/icons-material/VisibilityTwoTone";
+import AdjustTwoToneIcon from "@mui/icons-material/AdjustTwoTone";
+import PanToolTwoToneIcon from "@mui/icons-material/PanToolTwoTone";
 import { LinearProgress } from "@mui/material";
+import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
+import EmojiEventsTwoToneIcon from '@mui/icons-material/EmojiEventsTwoTone';
 
 const Statistics = () => {
   return (
@@ -194,7 +196,7 @@ const Statistics = () => {
         <div className="col-span-3 p-6 bg-light rounded-md flex flex-col justify-center items-center gap-y-3">
           <p className="text-sm font-semibold">Total Paid Users</p>
           <div className="flex items-center gap-x-2">
-            <ArrowDownwardTwoToneIcon className="text-error-500"/>
+            <ArrowDownwardTwoToneIcon className="text-error-500" />
             <h3 className="text-lg font-semibold">7652</h3>
           </div>
           <p className="text-xs text-gray-600">8% less Last 3 Months</p>
@@ -202,7 +204,7 @@ const Statistics = () => {
         <div className="col-span-3 p-6 bg-light rounded-md flex flex-col justify-center items-center gap-y-3">
           <p className="text-sm font-semibold">Order Status</p>
           <div className="flex items-center gap-x-2">
-            <ArrowUpwardTwoToneIcon className="text-success-500"/>
+            <ArrowUpwardTwoToneIcon className="text-success-500" />
             <h3 className="text-lg font-semibold">625</h3>
           </div>
           <p className="text-xs text-gray-600">6% From Last 3 Months</p>
@@ -210,7 +212,7 @@ const Statistics = () => {
         <div className="col-span-3 p-6 bg-light rounded-md flex flex-col justify-center items-center gap-y-3">
           <p className="text-sm font-semibold">Unique Visitors</p>
           <div className="flex items-center gap-x-2">
-            <ArrowDownwardTwoToneIcon className="text-error-500"/>
+            <ArrowDownwardTwoToneIcon className="text-error-500" />
             <h3 className="text-lg font-semibold">6522</h3>
           </div>
           <p className="text-xs text-gray-600">10% From Last 6 Months</p>
@@ -218,7 +220,7 @@ const Statistics = () => {
         <div className="col-span-3 p-6 bg-light rounded-md flex flex-col justify-center items-center gap-y-3">
           <p className="text-sm font-semibold">Monthly Earnings</p>
           <div className="flex items-center gap-x-2">
-            <ArrowUpwardTwoToneIcon className="text-success-500"/>
+            <ArrowUpwardTwoToneIcon className="text-success-500" />
             <h3 className="text-lg font-semibold">5963</h3>
           </div>
           <p className="text-xs text-gray-600">36% From Last 6 Months</p>
@@ -227,83 +229,127 @@ const Statistics = () => {
       {/* 7 */}
       <article className="grid grid-cols-12 gap-x-6">
         <div className="col-span-3 p-6 rounded-md bg-primary-500 flex justify-between items-center">
-            <div className="text-white">
-              <h3 className="text-lg font-bold">1165 +</h3>
-              <p className="text-xs font-semibold">Facebook Users</p>
-            </div>
-            <div><FacebookIcon className="transition-all duration-300 w-10 h-10 text-white opacity-40 hover:opacity-100 hover:scale-125"/></div>
+          <div className="text-white">
+            <h3 className="text-lg font-bold">1165 +</h3>
+            <p className="text-xs font-semibold">Facebook Users</p>
+          </div>
+          <div>
+            <FacebookIcon className="transition-all duration-300 w-10 h-10 text-white opacity-40 hover:opacity-100 hover:scale-125" />
+          </div>
         </div>
         <div className="col-span-3 p-6 rounded-md bg-secondary-500 flex justify-between items-center">
-            <div className="text-white">
-              <h3 className="text-lg font-bold">780 +</h3>
-              <p className="text-xs font-semibold">Twitter Users</p>
-            </div>
-            <div><TwitterIcon className="transition-all duration-300 w-10 h-10 text-white opacity-40 hover:opacity-100 hover:scale-125"/></div>
+          <div className="text-white">
+            <h3 className="text-lg font-bold">780 +</h3>
+            <p className="text-xs font-semibold">Twitter Users</p>
+          </div>
+          <div>
+            <TwitterIcon className="transition-all duration-300 w-10 h-10 text-white opacity-40 hover:opacity-100 hover:scale-125" />
+          </div>
         </div>
         <div className="col-span-3 p-6 rounded-md bg-slate-800 flex justify-between items-center">
-            <div className="text-white">
-              <h3 className="text-lg font-bold">998 +</h3>
-              <p className="text-xs font-semibold">Linked Users</p>
-            </div>
-            <div><LinkedInIcon className="transition-all duration-300 w-10 h-10 text-white opacity-40 hover:opacity-100 hover:scale-125"/></div>
+          <div className="text-white">
+            <h3 className="text-lg font-bold">998 +</h3>
+            <p className="text-xs font-semibold">Linked Users</p>
+          </div>
+          <div>
+            <LinkedInIcon className="transition-all duration-300 w-10 h-10 text-white opacity-40 hover:opacity-100 hover:scale-125" />
+          </div>
         </div>
         <div className="col-span-3 p-6 rounded-md bg-rose-500 flex justify-between items-center">
-            <div className="text-white">
-              <h3 className="text-lg font-bold">650 +</h3>
-              <p className="text-xs font-semibold">Youtube Videos</p>
-            </div>
-            <div><YouTubeIcon className="transition-all duration-300 w-10 h-10 text-white opacity-40 hover:opacity-100 hover:scale-125"/></div>
+          <div className="text-white">
+            <h3 className="text-lg font-bold">650 +</h3>
+            <p className="text-xs font-semibold">Youtube Videos</p>
+          </div>
+          <div>
+            <YouTubeIcon className="transition-all duration-300 w-10 h-10 text-white opacity-40 hover:opacity-100 hover:scale-125" />
+          </div>
         </div>
       </article>
       {/* 8 */}
       <article className="grid grid-cols-12 gap-x-6">
-          <div className="col-span-4 bg-light rounded-md p-6 flex justify-between items-center">
-            <div className="flex flex-col gap-y-2">
-              <p className="text-sm font-semibold">Impressions</p>
-              <h3 className="text-lg font-bold">1,563</h3>
-              <p className="text-xs text-gray-600">May 23 - June 01 (2018)</p>
-            </div>
-            <div className="w-11 h-11 flex justify-center items-center rounded-full bg-secondary-200"><VisibilityTwoToneIcon className="w-6 h-6 text-secondary-600"/></div>
+        <div className="col-span-4 bg-light rounded-md p-6 flex justify-between items-center">
+          <div className="flex flex-col gap-y-2">
+            <p className="text-sm font-semibold">Impressions</p>
+            <h3 className="text-lg font-bold">1,563</h3>
+            <p className="text-xs text-gray-600">May 23 - June 01 (2018)</p>
           </div>
-          <div className="col-span-4 bg-light rounded-md p-6 flex justify-between items-center">
-            <div className="flex flex-col gap-y-2">
-              <p className="text-sm font-semibold">Goal</p>
-              <h3 className="text-lg font-bold">30,564</h3>
-              <p className="text-xs text-gray-600">May 28 - June 01 (2018)</p>
-            </div>
-            <div className="w-11 h-11 flex justify-center items-center rounded-full bg-success-200"><AdjustTwoToneIcon className="w-6 h-6 text-success-600"/></div>
+          <div className="w-11 h-11 flex justify-center items-center rounded-full bg-secondary-200">
+            <VisibilityTwoToneIcon className="w-6 h-6 text-secondary-600" />
           </div>
-          <div className="col-span-4 bg-light rounded-md p-6 flex justify-between items-center">
-            <div className="flex flex-col gap-y-2">
-              <p className="text-sm font-semibold">Impact</p>
-              <h3 className="text-lg font-bold">42.6%</h3>
-              <p className="text-xs text-gray-600">May 30 - June 01 (2018)</p>
-            </div>
-            <div className="w-11 h-11 flex justify-center items-center rounded-full bg-warning-200"><PanToolTwoToneIcon className="w-6 h-6 text-warning-600"/></div>
+        </div>
+        <div className="col-span-4 bg-light rounded-md p-6 flex justify-between items-center">
+          <div className="flex flex-col gap-y-2">
+            <p className="text-sm font-semibold">Goal</p>
+            <h3 className="text-lg font-bold">30,564</h3>
+            <p className="text-xs text-gray-600">May 28 - June 01 (2018)</p>
           </div>
+          <div className="w-11 h-11 flex justify-center items-center rounded-full bg-success-200">
+            <AdjustTwoToneIcon className="w-6 h-6 text-success-600" />
+          </div>
+        </div>
+        <div className="col-span-4 bg-light rounded-md p-6 flex justify-between items-center">
+          <div className="flex flex-col gap-y-2">
+            <p className="text-sm font-semibold">Impact</p>
+            <h3 className="text-lg font-bold">42.6%</h3>
+            <p className="text-xs text-gray-600">May 30 - June 01 (2018)</p>
+          </div>
+          <div className="w-11 h-11 flex justify-center items-center rounded-full bg-warning-200">
+            <PanToolTwoToneIcon className="w-6 h-6 text-warning-600" />
+          </div>
+        </div>
       </article>
       {/* 9 */}
       <article className="grid grid-cols-12 gap-x-6 rounded-md bg-light p-5">
-          <div className="col-span-3 flex flex-col gap-y-2">
-            <p className="text-xs text-gray-600">Published Project</p>
-            <h3 className="text-lg font-semibold">532</h3>
-            <LinearProgress variant="buffer" color="secondary" value={30}/>
+        <div className="col-span-3 flex flex-col gap-y-2">
+          <p className="text-xs text-gray-600">Published Project</p>
+          <h3 className="text-lg font-semibold">532</h3>
+          <LinearProgress variant="buffer" color="secondary" value={30} />
+        </div>
+        <div className="col-span-3 flex flex-col gap-y-2">
+          <p className="text-xs text-gray-600">Completed Task</p>
+          <h3 className="text-lg font-semibold">4,569</h3>
+          <LinearProgress variant="buffer" color="success" value={75} />
+        </div>
+        <div className="col-span-3 flex flex-col gap-y-2">
+          <p className="text-xs text-gray-600">Pending Task</p>
+          <h3 className="text-lg font-semibold">1,005</h3>
+          <LinearProgress variant="buffer" color="warning" value={25} />
+        </div>
+        <div className="col-span-3 flex flex-col gap-y-2">
+          <p className="text-xs text-gray-600">Issues</p>
+          <h3 className="text-lg font-semibold">365</h3>
+          <LinearProgress variant="buffer" color="error" value={10} />
+        </div>
+      </article>
+      {/* 10 */}
+      <article className="grid grid-cols-12 gap-x-6">
+        <div className="col-span-4 relative overflow-hidden flex justify-center items-center bg-primary-700 rounded-md p-8">
+          <div className="absolute -left-4 -bottom-5">
+            <AccountCircleTwoToneIcon className="w-24 h-24 text-primary-400 rotate-[35deg]" />
           </div>
-          <div className="col-span-3 flex flex-col gap-y-2">
-            <p className="text-xs text-gray-600">Completed Task</p>
-            <h3 className="text-lg font-semibold">4,569</h3>
-            <LinearProgress variant="buffer" color="success" value={75}/>
+          <div className="flex flex-col justify-center items-center text-white">
+            <h3 className="font-bold">1,658</h3>
+            <p className="text-sm">Daily user</p>
           </div>
-          <div className="col-span-3 flex flex-col gap-y-2">
-            <p className="text-xs text-gray-600">Pending Task</p>
-            <h3 className="text-lg font-semibold">1,005</h3>
-            <LinearProgress variant="buffer" color="warning" value={25}/>
+        </div>
+        <div className="col-span-4 relative overflow-hidden flex justify-center items-center bg-secondary-500 rounded-md p-8">
+          <div className="absolute -left-4 -bottom-5">
+            <DescriptionOutlinedIcon className="w-24 h-24 text-secondary-300 rotate-[35deg]" />
           </div>
-          <div className="col-span-3 flex flex-col gap-y-2">
-            <p className="text-xs text-gray-600">Issues</p>
-            <h3 className="text-lg font-semibold">365</h3>
-            <LinearProgress variant="buffer" color="error" value={10}/>
+          <div className="flex flex-col justify-center items-center text-white">
+            <h3 className="font-bold">1K</h3>
+            <p className="text-sm">Daily page view</p>
           </div>
+        </div>
+        <div className="col-span-4 relative overflow-hidden flex justify-center items-center bg-success-600 rounded-md p-8">
+          <div className="absolute -left-4 -bottom-5">
+            <EmojiEventsTwoToneIcon className="w-24 h-24 text-success-400 rotate-[35deg]" />
+          </div>
+          <div className="flex flex-col justify-center items-center text-white">
+            <h3 className="font-bold">5,678</h3>
+            <p className="text-sm">Last month visitor</p>
+          </div>
+        </div>
       </article>
     </section>
   );
