@@ -23,7 +23,12 @@ import AdjustTwoToneIcon from "@mui/icons-material/AdjustTwoTone";
 import PanToolTwoToneIcon from "@mui/icons-material/PanToolTwoTone";
 import { LinearProgress } from "@mui/material";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
-import EmojiEventsTwoToneIcon from '@mui/icons-material/EmojiEventsTwoTone';
+import EmojiEventsTwoToneIcon from "@mui/icons-material/EmojiEventsTwoTone";
+import { GoShareAndroid } from "react-icons/go";
+import { MdOutlineSensors } from "react-icons/md";
+import { TbChartCircles } from "react-icons/tb";
+import { CiCreditCard1 } from "react-icons/ci";
+import WbSunnyTwoToneIcon from "@mui/icons-material/WbSunnyTwoTone";
 
 const Statistics = () => {
   return (
@@ -348,6 +353,86 @@ const Statistics = () => {
           <div className="flex flex-col justify-center items-center text-white">
             <h3 className="font-bold">5,678</h3>
             <p className="text-sm">Last month visitor</p>
+          </div>
+        </div>
+      </article>
+      {/* 11 */}
+      <article className="grid grid-cols-12 gap-x-6 grid-rows-6">
+        <div className="col-span-4 row-span-6 rounded-md bg-light">
+          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
+            Customer satisfaction
+          </h2>
+          <div className="p-6 flex flex-col justify-center items-center gap-y-6">
+            <h3 className="text-lg font-semibold">69.73%</h3>
+            <div className="w-full">
+              <LinearProgress variant="buffer" color="primary" value={70} />
+            </div>
+            <div className="w-full grid grid-cols-3 gap-x-2">
+              <div className="col-span-1">
+                <p className="text-xs text-gray-600">previous</p>
+                <p>56.75</p>
+              </div>
+              <div className="col-span-1">
+                <p className="text-xs text-gray-600">Change</p>
+                <p>+12.60</p>
+              </div>
+              <div className="col-span-1">
+                <p className="text-xs text-gray-600">Trend</p>
+                <p>23.78</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-span-4 row-span-5 rounded-md bg-light grid grid-cols-2 grid-rows-2">
+          <div className="col-span-2 row-span-1 border-b border-b-gray-200 grid grid-cols-2">
+            <div className="flex justify-start items-center gap-x-2 pl-5">
+              <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
+                <GoShareAndroid />
+              </div>
+              <div>
+                <p className="font-semibold text-sm">1000</p>
+                <p className="text-gray-600 text-xs">SHARES</p>
+              </div>
+            </div>
+            <div className="col-span-1 flex justify-start items-center gap-x-2 pl-5 border-l border-l-gray-200">
+              <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
+                <MdOutlineSensors />
+              </div>
+              <div>
+                <p className="font-semibold text-sm">600</p>
+                <p className="text-gray-600 text-xs">NETWORK</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-2 row-span-1 grid grid-cols-2">
+            <div className="col-span-1 flex justify-start items-center gap-x-2  pl-5">
+              <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
+                <TbChartCircles />
+              </div>
+              <div>
+                <p className="font-semibold text-sm">3550</p>
+                <p className="text-gray-600 text-xs">RETURNS</p>
+              </div>
+            </div>
+            <div className="col-span-1 flex justify-start items-center gap-x-2 pl-5 border-l border-r-gray-200">
+              <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
+                <CiCreditCard1 />
+              </div>
+              <div>
+                <p className="font-semibold text-sm">100%</p>
+                <p className="text-gray-600 text-xs">ORDER</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-span-4 row-span-3 rounded-md overflow-hidden flex justify-between items-center bg-light">
+          <div className="w-1/2 flex justify-center items-center flex-col">
+            <h2 className="text-2xl font-semibold">19°</h2>
+            <p className="text-xs text-gray-600">sunny</p>
+          </div>
+          <div className="w-1/2 h-full bg-secondary-500 flex flex-col justify-center items-center gap-y-2">
+            <WbSunnyTwoToneIcon className="w-12 h-12 text-white"/>
+            <p className="text-xs text-white">New York , NY</p>
           </div>
         </div>
       </article>
