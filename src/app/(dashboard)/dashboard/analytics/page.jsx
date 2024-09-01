@@ -22,7 +22,7 @@ import AccountCircleTwoToneIcon from "@mui/icons-material/AccountCircleTwoTone";
 import { IoMdArrowDropup } from "react-icons/io";
 import { IoMdArrowDropdown } from "react-icons/io";
 import Image from "next/image";
-import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 
 const revenueData = [
   {
@@ -162,9 +162,9 @@ const customersData = [
 
 const Analytics = () => {
   return (
-    <section>
+    <section className="w-full">
       {/*  */}
-      <article className="grid grid-cols-6 gap-6 auto-rows-auto">
+      <article className="grid grid-cols-6 gap-6">
         {/* 1 */}
         <div className="relative overflow-hidden col-span-4 bg-light rounded-md pt-8 row-span-6">
           <div className="px-5">
@@ -431,7 +431,9 @@ const Analytics = () => {
             </div>
           </div>
           <div className="relative overflow-hidden flex justify-center items-center bg-secondary-500 rounded-md p-8">
-            <div className="absolute -left-4 -bottom-5"><DescriptionOutlinedIcon className="w-24 h-24 text-secondary-300 rotate-[35deg]" /></div>
+            <div className="absolute -left-4 -bottom-5">
+              <DescriptionOutlinedIcon className="w-24 h-24 text-secondary-300 rotate-[35deg]" />
+            </div>
             <div className="flex flex-col justify-center items-center text-white">
               <h3 className="font-bold">1K</h3>
               <p className="text-sm">Daily page view</p>

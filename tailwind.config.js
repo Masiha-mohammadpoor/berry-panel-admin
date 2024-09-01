@@ -1,4 +1,4 @@
-const colors = require('tailwindcss/colors')
+const colors = require("tailwindcss/colors");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -10,21 +10,21 @@ module.exports = {
   theme: {
     extend: {
       gridColumn: {
-        'span-15': 'span 15 / span 15',
+        "span-15": "span 15 / span 15",
       },
       gridTemplateColumns: {
-        '16': 'repeat(16, minmax(0, 1fr));',
+        16: "repeat(16, minmax(0, 1fr));",
       },
-      colors : {
-        primary : colors.violet,
-        secondary : colors.sky,
-        tertiary : colors.blue,
-        error : colors.rose,
-        warning : colors.amber,
-        success : colors.green,
-        body : "#eef2f6",
-        light : colors.white
-      }
+      colors: {
+        primary: colors.violet,
+        secondary: colors.sky,
+        tertiary: colors.blue,
+        error: colors.rose,
+        warning: colors.amber,
+        success: colors.green,
+        body: "#eef2f6",
+        light: colors.white,
+      },
     },
   },
   plugins: [],

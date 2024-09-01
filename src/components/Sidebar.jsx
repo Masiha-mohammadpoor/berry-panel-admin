@@ -18,7 +18,7 @@ const Sidebar = () => {
 
 
   return (
-    <section className="pl-5 pt-3 pr-2">
+    <section className="pl-5 pt-1 pr-2">
       <article className={`overflow-hidden flex ${openMenu ? "justify-between" : "justify-center"} items-center`}>
         <div className={`flex items-center gap-x-1 ${!openMenu && "hidden"}`}>
           <Image src="/images/logo.png" alt="LOGO" width={40} height={40} />
