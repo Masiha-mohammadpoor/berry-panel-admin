@@ -18,6 +18,10 @@ import Avatar from "@mui/material/Avatar";
 import AddIcon from "@mui/icons-material/Add";
 import AccessTimeTwoToneIcon from "@mui/icons-material/AccessTimeTwoTone";
 import { styled } from '@mui/material/styles';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import BusinessCenterTwoToneIcon from '@mui/icons-material/BusinessCenterTwoTone';
+import DoneAllIcon from '@mui/icons-material/DoneAll';
+import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
 
 const Data = () => {
 
@@ -358,16 +362,60 @@ const Data = () => {
               </p>
             </div>
           </div>
-          <div className="p-5 border-t border-t-gray-200 w-full flex justify-end">
+          <div className="p-5 border-t border-t-gray-200 w-full flex justify-end sticky bottom-0">
             <Button variant="text" size="small" className="capitalize font-semibold">View All Projects</Button>
           </div>
         </div>
         {/* 2 */}
-        <div className="col-span-3 rounded-md bg-light">
+        <div className="col-span-3 rounded-md bg-light ">
           <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
             Messages
           </h2>
-          <div ></div>
+          <div className="w-full p-6 flex flex-col gap-y-6">
+          <div className="flex items-center gap-x-4">
+              <p className="text-xs text-gray-500">2 min ago</p>
+              <div className="w-11 h-11 rounded-full flex justify-center items-center bg-secondary-500">
+                <TwitterIcon className="w-6 h-6 text-white"/>
+              </div>
+              <div>
+                <p className="font-semibold text-sm">+ 1652 Followers</p>
+                <p className="text-xs text-gray-500">You’re getting more and more followers</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-x-4">
+              <p className="text-xs text-gray-500">4 hrs ago</p>
+              <div className="w-11 h-11 rounded-full flex justify-center items-center bg-error-500">
+                <BusinessCenterTwoToneIcon className="w-6 h-6 text-white"/>
+              </div>
+              <div>
+                <p className="font-semibold text-sm">+ 5 New Products were added!</p>
+                <p className="text-xs text-gray-500">Congratulations!</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-x-4">
+              <p className="text-xs text-gray-500">1 day ago</p>
+              <div className="w-11 h-11 rounded-full flex justify-center items-center bg-success-500">
+                <DoneAllIcon className="w-6 h-6 text-white"/>
+              </div>
+              <div>
+                <p className="font-semibold text-sm">Database backup completed!</p>
+                <p className="text-xs text-gray-500">Download the latest backup.</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-x-4">
+              <p className="text-xs text-gray-500">2 day ago</p>
+              <div className="w-11 h-11 rounded-full flex justify-center items-center bg-secondary-500">
+                <AccountCircleTwoToneIcon className="w-6 h-6 text-white"/>
+              </div>
+              <div>
+                <p className="font-semibold text-sm">+2 Friend Requests</p>
+                <p className="text-xs text-gray-500">This is great, keep it up!</p>
+              </div>
+            </div>
+          </div>
+          <div className="p-5 border-t border-t-gray-200 w-full flex justify-end sticky bottom-0">
+            <Button variant="text" size="small" className="capitalize font-semibold">View All Projects</Button>
+          </div>
         </div>
 
       </article>
