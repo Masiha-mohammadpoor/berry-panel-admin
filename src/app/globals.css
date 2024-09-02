@@ -30,3 +30,7 @@
 	width: 5px;
 	background-color: transparent;
 }
+
+.MuiFormLabel-filled {
+	text-decoration:line-through;
+}

@@ -308,7 +308,7 @@ const Statistics = () => {
         <div className="col-span-3 flex flex-col gap-y-2">
           <p className="text-xs text-gray-600">Published Project</p>
           <h3 className="text-lg font-semibold">532</h3>
-          <LinearProgress variant="buffer" color="secondary" value={30} />
+          <LinearProgress variant="determinate"  color="inherit" className="bg-primary-200 text-primary-500" value={30} />
         </div>
         <div className="col-span-3 flex flex-col gap-y-2">
           <p className="text-xs text-gray-600">Completed Task</p>
