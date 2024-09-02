@@ -1,6 +1,7 @@
 import { IoHome } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
 import {
+  Button,
   Checkbox,
   FormControlLabel,
   FormGroup,
@@ -9,8 +10,8 @@ import {
   Typography,
 } from "@mui/material";
 import { FormLabel } from "@mui/material";
-import { Fingerprint } from "@mui/icons-material";
 import { FiPlus } from "react-icons/fi";
+import Avatar from '@mui/material/Avatar';
 
 const Data = () => {
   return (
@@ -36,7 +37,7 @@ const Data = () => {
             To Do List
           </h2>
           <div className="px-6 py-6">
-            <FormGroup>
+            <FormGroup className="w-full flex flex-col gap-y-1">
               <FormControlLabel
                 control={<Checkbox defaultChecked />}
                 label={<FormLabel>Check your Email</FormLabel>}
@@ -124,6 +125,62 @@ const Data = () => {
           <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
             Team Members
           </h2>
+          <div className="px-6 py-6 flex flex-col justify-between items-center gap-y-6">
+          <div className="w-full flex justify-between items-center">
+              <div className="flex gap-x-2 items-center">
+                <Avatar alt="user" src="/images/avatar-1.png"/>
+                <div className="flex flex-col gap-y-1">
+                  <p className="text-sm font-semibold">David Jones</p>
+                  <p className="text-xs text-gray-500">Developer</p>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500">5 min ago</p>
+            </div>
+            <div className="w-full flex justify-between items-center">
+              <div className="flex gap-x-2 items-center">
+                <Avatar alt="user" src="/images/avatar-2.png"/>
+                <div className="flex flex-col gap-y-1">
+                  <p className="text-sm font-semibold">David Jones</p>
+                  <p className="text-xs text-gray-500">Developer</p>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500">5 min ago</p>
+            </div>
+            <div className="w-full flex justify-between items-center">
+              <div className="flex gap-x-2 items-center">
+                <Avatar alt="user" src="/images/avatar-3.png"/>
+                <div className="flex flex-col gap-y-1">
+                  <p className="text-sm font-semibold">David Jones</p>
+                  <p className="text-xs text-gray-500">Developer</p>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500">5 min ago</p>
+            </div>
+            <div className="w-full flex justify-between items-center">
+              <div className="flex gap-x-2 items-center">
+                <Avatar alt="user" src="/images/avatar-4.png"/>
+                <div className="flex flex-col gap-y-1">
+                  <p className="text-sm font-semibold">David Jones</p>
+                  <p className="text-xs text-gray-500">Developer</p>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500">5 min ago</p>
+            </div>
+            <div className="w-full flex justify-between items-center">
+              <div className="flex gap-x-2 items-center">
+                <Avatar alt="user" src="/images/avatar-2.png"/>
+                <div className="flex flex-col gap-y-1">
+                  <p className="text-sm font-semibold">David Jones</p>
+                  <p className="text-xs text-gray-500">Developer</p>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500">5 min ago</p>
+            </div>
+          </div>
+          <div className="p-5 border-t border-t-gray-200 w-full flex justify-end">
+            <Button variant="text" size="small" className="capitalize font-bold">View All Projects</Button>
+          </div>
+
         </div>
       </article>
     </section>
