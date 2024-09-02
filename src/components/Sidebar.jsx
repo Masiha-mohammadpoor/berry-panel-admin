@@ -82,13 +82,15 @@ const Sidebar = () => {
               <span className={`${!openMenu && "hidden"} text-sm`}>Data</span>
             </IconButton>
             </Link>
+            <Link href="/dashboard/chart">
             <IconButton
               variant="contained"
-              className={`mx-auto transition mb-1 flex ${openMenu ? "w-full pl-5 py-3 gap-x-4 justify-start" : "p-3"} hover:bg-primary-100 hover:text-primary-800 hover:shadow-none rounded-lg shadow-none text-black capitalize`}
+              className={`mx-auto transition mb-1 flex ${openMenu ? "w-full pl-5 py-3 gap-x-4 justify-start" : "p-3"} ${pathname ==="/dashboard/chart" ?"bg-primary-100 text-primary-800": "bg-light"} hover:bg-primary-100 hover:text-primary-800 hover:shadow-none rounded-lg shadow-none text-black capitalize`}
             >
               <BarChartOutlinedIcon />
               <span className={`${!openMenu && "hidden"} text-sm`}>Chart</span>
             </IconButton>
+            </Link>
           </div>
           <div className={`w-full border-[0.2px] mt-6 ${!openMenu && "hidden"}`}></div>
         </div>

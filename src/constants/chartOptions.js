@@ -202,3 +202,64 @@ export const areaCharOptions = {
   },
 
 }
+
+export const areaCharOptionsInChartsPage = {
+  chart: {
+    toolbar: {
+      show: false,
+    },
+    type: "area",
+    sparkline: {
+      enabled: true,
+    },
+  },
+  colors: ["#fff"],
+  grid: {
+    show: false,
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  stroke: {
+    colors:["#fff"],
+    curve: "smooth",
+    width: 3,
+  },
+  xaxis: {
+    show: false,
+    labels: {
+      show: false,
+    },
+    axisBorder: {
+      show: false,
+    },
+    axisTicks: {
+      show: false,
+    },
+  },
+  yaxis: {
+    labels: {
+      show: false,
+    },
+  },
+  fill: {
+    colors:["#fff"],
+    type: "solid",
+    opacity : 0.3
+  },
+  tooltip: {
+    fillSeriesColor: false,
+    theme: "dark",
+    style: {},
+    marker: {
+      show: false,
+    },
+    x: { show: false },
+    y: {
+      title: {
+        formatter: (seriesName) => `total`,
+      },
+    },
+  },
+
+}
