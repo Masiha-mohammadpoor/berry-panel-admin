@@ -88,7 +88,7 @@ const Dashboard = () => {
             </IconButton>
           </div>
           <div className="flex gap-x-1 mt-3">
-            <h1 className="text-light text-4xl font-semibold">$500.00</h1>
+            <h1 className="text-light text-4xl font-semibold z-50">$500.00</h1>
             <IconButton className="text-primary-300 hover:text-primary-300 relative -top-1">
               <OutboundIcon />
             </IconButton>
@@ -125,7 +125,7 @@ const Dashboard = () => {
           <div className="w-full flex justify-between items-center gap-x-1 mt-3">
             <div className="flex flex-col gap-x-1">
               <div className="flex gap-x-1">
-                <h1 className="text-light text-4xl font-semibold">$961</h1>
+                <h1 className="text-light text-4xl font-semibold z-50">$961</h1>
                 <IconButton className="text-secondary-300 relative -top-1 rotate-180">
                   <OutboundIcon />
                 </IconButton>
