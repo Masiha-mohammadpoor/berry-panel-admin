@@ -89,7 +89,7 @@ const Data = () => {
       {/* 1 */}
       <article className="bg-light rounded-md flex justify-between p-4">
         <h2 className="text-lg font-semibold">Data</h2>
-        <div className="flex items-center gap-x-4">
+        <div className="flex items-center sm:gap-x-4 gap-x-2">
           <div>
             <IoHome className="text-primary-600" />
           </div>

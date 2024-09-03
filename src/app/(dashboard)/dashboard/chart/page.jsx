@@ -17,7 +17,7 @@ const Charts = () => {
       {/* 1 */}
       <article className="bg-light rounded-md flex justify-between p-4">
         <h2 className="text-lg font-semibold">Chart</h2>
-        <div className="flex items-center gap-x-4">
+        <div className="flex items-center sm:gap-x-4 gap-x-2">
           <div>
             <IoHome className="text-primary-600" />
           </div>
@@ -28,8 +28,8 @@ const Charts = () => {
         </div>
       </article>
       {/* 2 */}
-      <article className="w-full grid grid-cols-12 gap-x-6">
-        <div className="col-span-3 rounded-md bg-secondary-500 flex flex-col gap-y-3 overflow-hidden">
+      <article className="w-full grid grid-cols-12 gap-6">
+        <div className="col-span-12 sm:col-span-6 lg:col-span-3 max-h-52 rounded-md bg-secondary-500 flex flex-col gap-y-3 overflow-hidden">
           <div className="w-full flex justify-between items-start p-6">
             <div className="text-white">
               <p className="text-lg font-semibold">4000</p>
@@ -51,7 +51,7 @@ const Charts = () => {
             />
           </div>
         </div>
-        <div className="col-span-3 rounded-md bg-error-500 flex flex-col gap-y-3 overflow-hidden">
+        <div className="col-span-12 sm:col-span-6 lg:col-span-3 max-h-52 rounded-md bg-error-500 flex flex-col gap-y-3 overflow-hidden">
           <div className="w-full flex justify-between items-start p-6">
             <div className="text-white">
               <p className="text-lg font-semibold">2500</p>
@@ -73,7 +73,7 @@ const Charts = () => {
             />
           </div>
         </div>
-        <div className="col-span-3 rounded-md bg-success-500 flex flex-col gap-y-3 overflow-hidden">
+        <div className="col-span-12 sm:col-span-6 lg:col-span-3 max-h-52 rounded-md bg-success-500 flex flex-col gap-y-3 overflow-hidden">
           <div className="w-full flex justify-between items-start p-6">
             <div className="text-white">
               <p className="text-lg font-semibold">2500</p>
@@ -95,7 +95,7 @@ const Charts = () => {
             />
           </div>
         </div>
-        <div className="col-span-3 rounded-md bg-primary-700 flex flex-col gap-y-3 overflow-hidden">
+        <div className="col-span-12 sm:col-span-6 lg:col-span-3 max-h-52 rounded-md bg-primary-700 flex flex-col gap-y-3 overflow-hidden">
           <div className="w-full flex justify-between items-start p-6">
             <div className="text-white">
               <p className="text-lg font-semibold">12500</p>
@@ -119,117 +119,115 @@ const Charts = () => {
         </div>
       </article>
       {/* 3 */}
-      <article className="grid grid-cols-7 gap-x-6">
+      <article className="grid grid-cols-7 gap-6">
         {/* 1 */}
-        <div className="col-span-4 rounded-md">
-          <div className="relative overflow-hidden bg-light rounded-md pt-8">
-            <div className="px-5">
-              <div className="flex justify-between items-center">
-                <h2 className="font-semibold text-xl">Market Share</h2>
-                <div className="flex gap-x-2 text-xl">
-                  <TrendingDownIcon className="text-3xl text-error-600" />
-                  <p className="font-bold">27,695.65</p>
-                </div>
-              </div>
-              <p className="text-sm mt-3">
-                Department wise monthly sales report
-              </p>
-              <div className="mt-5 flex gap-x-6">
-                <div className="flex items-center gap-x-2">
-                  <IconButton className="flex justify-center items-center p-2 rounded-lg bg-primary-200 text-primary-600 hover:bg-primary-200">
-                    <LuFacebook />
-                  </IconButton>
-                  <p className="font-bold">+ 45.36%</p>
-                </div>
-                <div className="flex items-center gap-x-2">
-                  <IconButton className="flex justify-center items-center p-2 rounded-lg bg-secondary-200 text-secondary-600 hover:bg-secondary-200">
-                    <FiTwitter />
-                  </IconButton>
-                  <p className="font-bold">- 50.69%</p>
-                </div>
-                <div className="flex items-center gap-x-2">
-                  <IconButton className="flex justify-center items-center p-2 rounded-lg bg-error-200 text-error-600 hover:bg-error-200">
-                    <FiYoutube />
-                  </IconButton>
-                  <p className="font-bold">+ 16.85%</p>
-                </div>
+        <div className="col-span-7 lg:col-span-4 rounded-md">
+        <div className="relative overflow-hidden col-span-6 lg:col-span-4 bg-light rounded-md pt-8 row-span-6">
+          <div className="px-5">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-y-3">
+              <h2 className="font-semibold text-xl">Market Share</h2>
+              <div className="flex gap-x-2 text-xl">
+                <TrendingDownIcon className="text-3xl text-error-600" />
+                <p className="font-bold">27,695.65</p>
               </div>
             </div>
-            {/* chart */}
-            <div className="mt-16">
-              <Chart
-                height={170}
-                options={{
-                  chart: {
-                    toolbar: {
-                      show: false,
-                    },
-                    height: 100,
-                    type: "area",
-                    sparkline: {
-                      enabled: true,
-                    },
-                  },
-                  colors: ["#5b21b6", "#3b82f6", "#f43f5e"],
-                  grid: {
-                    show: false,
-                  },
-                  dataLabels: {
-                    enabled: false,
-                  },
-                  stroke: {
-                    curve: "smooth",
-                    width: 2,
-                  },
-                  xaxis: {
-                    show: false,
-                    labels: {
-                      show: false,
-                    },
-                    axisBorder: {
-                      show: false,
-                    },
-                    axisTicks: {
-                      show: false,
-                    },
-                  },
-                  yaxis: {
-                    labels: {
-                      show: false,
-                    },
-                  },
-                  fill: {
-                    type: "gradient",
-                    gradient: {
-                      shade: "light",
-                      type: "vertical",
-                      shadeIntensity: 0,
-                      opacityFrom: 0.4,
-                      opacityTo: 0,
-                    },
-                  },
-                }}
-                series={[
-                  {
-                    name: "Facebook",
-                    data: [10, 90, 65, 85, 40, 80, 30],
-                  },
-                  {
-                    name: "Twitter",
-                    data: [50, 30, 25, 15, 55, 10, 25],
-                  },
-                  {
-                    name: "Youtube",
-                    data: [5, 50, 40, 55, 20, 40, 20],
-                  },
-                ]}
-                type="area"
-              />
+            <p className="text-sm mt-3">Department wise monthly sales report</p>
+            <div className="mt-5 flex flex-col sm:flex-row gap-6">
+              <div className="flex items-center gap-x-2">
+                <IconButton className="flex justify-center items-center p-2 rounded-lg bg-primary-200 text-primary-600 hover:bg-primary-200">
+                  <LuFacebook />
+                </IconButton>
+                <p className="font-bold">+ 45.36%</p>
+              </div>
+              <div className="flex items-center gap-x-2">
+                <IconButton className="flex justify-center items-center p-2 rounded-lg bg-secondary-200 text-secondary-600 hover:bg-secondary-200">
+                  <FiTwitter />
+                </IconButton>
+                <p className="font-bold">- 50.69%</p>
+              </div>
+              <div className="flex items-center gap-x-2">
+                <IconButton className="flex justify-center items-center p-2 rounded-lg bg-error-200 text-error-600 hover:bg-error-200">
+                  <FiYoutube />
+                </IconButton>
+                <p className="font-bold">+ 16.85%</p>
+              </div>
             </div>
           </div>
+          {/* chart */}
+          <div className="mt-16">
+            <Chart
+              height={170}
+              options={{
+                chart: {
+                  toolbar: {
+                    show: false,
+                  },
+                  height: 100,
+                  type: "area",
+                  sparkline: {
+                    enabled: true,
+                  },
+                },
+                colors: ["#5b21b6", "#3b82f6", "#f43f5e"],
+                grid: {
+                  show: false,
+                },
+                dataLabels: {
+                  enabled: false,
+                },
+                stroke: {
+                  curve: "smooth",
+                  width: 2,
+                },
+                xaxis: {
+                  show: false,
+                  labels: {
+                    show: false,
+                  },
+                  axisBorder: {
+                    show: false,
+                  },
+                  axisTicks: {
+                    show: false,
+                  },
+                },
+                yaxis: {
+                  labels: {
+                    show: false,
+                  },
+                },
+                fill: {
+                  type: "gradient",
+                  gradient: {
+                    shade: "light",
+                    type: "vertical",
+                    shadeIntensity: 0,
+                    opacityFrom: 0.4,
+                    opacityTo: 0,
+                  },
+                },
+              }}
+              series={[
+                {
+                  name: "Facebook",
+                  data: [10, 90, 65, 85, 40, 80, 30],
+                },
+                {
+                  name: "Twitter",
+                  data: [50, 30, 25, 15, 55, 10, 25],
+                },
+                {
+                  name: "Youtube",
+                  data: [5, 50, 40, 55, 20, 40, 20],
+                },
+              ]}
+              type="area"
+            />
+          </div>
+        </div>
         </div>
         {/* 2 */}
-        <div className="col-span-3 rounded-md bg-light">
+        <div className="col-span-7 lg:col-span-3 rounded-md bg-light">
           <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
             Total Revenue
           </h2>
@@ -243,7 +241,7 @@ const Charts = () => {
               />
             </div>
           </div>
-          <div className="w-full px-6 flex justify-between items-center">
+          <div className="w-full p-6 flex justify-between items-center">
           <div className="flex flex-col justify-center items-center">
               <p className="text-sm font-semibold">youtube</p>
               <p className="text-error-600 text-sm font-semibold">+16.58%</p>
