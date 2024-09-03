@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
             <header className="w-full col-span-1 px-2 py-2 h-16 sticky top-0">
               <Navigation />
             </header>
-            <section className="w-full mt-3 h-screen col-span-1 bg-body rounded-t-xl pb-28 overflow-y-scroll sticky top-16">
+            <section className="w-full mt-3 h-screen col-span-1 bg-body rounded-t-xl pb-28 overflow-x-hidden overflow-y-scroll sticky top-16">
               <section className="w-full rounded-t-xl pt-5 px-4 lg:px-10 w-fll overflow-y-auto">
                 {children}
               </section>

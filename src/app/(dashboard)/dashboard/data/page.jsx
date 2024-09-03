@@ -100,9 +100,9 @@ const Data = () => {
         </div>
       </article>
       {/* 2 */}
-      <article className="grid grid-cols-6 gap-x-6">
+      <article className="grid grid-cols-6 gap-6">
         {/* 1 */}
-        <div className="rounded-md bg-light col-span-2">
+        <div className="rounded-md bg-light col-span-6 md:col-span-3 lg:col-span-2">
           <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
             To Do List
           </h2>
@@ -141,7 +141,7 @@ const Data = () => {
           </div>
         </div>
         {/* 2 */}
-        <div className="rounded-md bg-light col-span-2">
+        <div className="rounded-md bg-light col-span-6 md:col-span-3 lg:col-span-2">
           <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
             Traffic Sources
           </h2>
@@ -206,7 +206,7 @@ const Data = () => {
           </div>
         </div>
         {/* 3 */}
-        <div className="rounded-md bg-light col-span-2">
+        <div className="rounded-md bg-light col-span-6 md:col-span-3 lg:col-span-2">
           <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
             Team Members
           </h2>
@@ -274,9 +274,9 @@ const Data = () => {
         </div>
       </article>
       {/* 3 */}
-      <article className="grid grid-cols-6 gap-x-6">
+      <article className="grid grid-cols-6 gap-6">
         {/* 1 */}
-        <div className="col-span-3 rounded-md bg-light">
+        <div className="col-span-6 md:col-span-3 rounded-md bg-light">
           <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
             User Activity
           </h2>
@@ -367,7 +367,8 @@ const Data = () => {
           </div>
         </div>
         {/* 2 */}
-        <div className="col-span-3 rounded-md bg-light ">
+        <div className="col-span-6 md:col-span-3 rounded-md bg-light overflow-x-scroll revenueList">
+          <div className="min-w-96">
           <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
             Messages
           </h2>
@@ -415,6 +416,7 @@ const Data = () => {
           </div>
           <div className="p-5 border-t border-t-gray-200 w-full flex justify-end sticky bottom-0">
             <Button variant="text" size="small" className="capitalize font-semibold">View All Projects</Button>
+          </div>
           </div>
         </div>
 
