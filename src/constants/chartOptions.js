@@ -263,3 +263,38 @@ export const areaCharOptionsInChartsPage = {
   },
 
 }
+
+export const circleChartInChartPage = {
+    chart: {
+    type: 'donut',
+  },
+  colors:['#e11d48', '#0ea5e9', '#8b5cf6'],
+  labels: ['youtube', 'Facebook', 'Twitter'],
+  legend: {
+    position: "bottom",
+    offsetY: 10,
+    markers: {
+      size: 8,
+      shape: "circle",
+      offsetX: -5,
+    },
+    itemMargin: {
+      horizontal: 15,
+    },
+  },
+  dataLabels: {
+    enabled: false
+  },
+
+  // responsive: [{
+  //   breakpoint: 480,
+  //   options: {
+  //     chart: {
+  //       width: 200
+  //     },
+  //     legend: {
+  //       position: 'bottom'
+  //     }
+  //   }
+  // }]
+}
