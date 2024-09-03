@@ -166,9 +166,9 @@ const Analytics = () => {
       {/*  */}
       <article className="grid grid-cols-6 gap-6">
         {/* 1 */}
-        <div className="relative overflow-hidden col-span-4 bg-light rounded-md pt-8 row-span-6">
+        <div className="relative overflow-hidden col-span-6 lg:col-span-4 bg-light rounded-md pt-8 row-span-6">
           <div className="px-5">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-y-3">
               <h2 className="font-semibold text-xl">Market Share</h2>
               <div className="flex gap-x-2 text-xl">
                 <TrendingDownIcon className="text-3xl text-error-600" />
@@ -176,7 +176,7 @@ const Analytics = () => {
               </div>
             </div>
             <p className="text-sm mt-3">Department wise monthly sales report</p>
-            <div className="mt-5 flex gap-x-6">
+            <div className="mt-5 flex flex-col sm:flex-row gap-6">
               <div className="flex items-center gap-x-2">
                 <IconButton className="flex justify-center items-center p-2 rounded-lg bg-primary-200 text-primary-600 hover:bg-primary-200">
                   <LuFacebook />
@@ -270,7 +270,7 @@ const Analytics = () => {
           </div>
         </div>
         {/* 2 */}
-        <div className="col-span-2 row-span-2 rounded-md bg-light grid grid-cols-2 grid-rows-2">
+        <div className="col-span-6 lg:col-span-2 row-span-2 rounded-md bg-light grid grid-cols-2 grid-rows-2">
           <div className="col-span-2 row-span-1 border-b border-b-gray-200 grid grid-cols-2">
             <div className="flex justify-start items-center gap-x-2 pl-5 py-5">
               <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
@@ -313,7 +313,7 @@ const Analytics = () => {
           </div>
         </div>
         {/* 3 */}
-        <div className="rounded-md col-span-2 bg-light row-span-7">
+        <div className="rounded-md col-span-6 lg:col-span-2 bg-light row-span-7">
           <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
             Total Revenue
           </h2>
@@ -347,8 +347,8 @@ const Analytics = () => {
           </div>
         </div>
         {/* 4 */}
-        <div className="col-span-4 row-span-2 grid grid-cols-2 gap-x-6">
-          <div className="col-span-1 flex justify-between items-center pl-6 pr-5 py-2 rounded-md bg-primary-700">
+        <div className="col-span-6 lg:col-span-4 row-span-2 grid grid-cols-2 gap-6">
+          <div className="col-span-2 sm:col-span-1 flex justify-between items-center pl-6 pr-5 py-2 rounded-md bg-primary-700">
             <div className="text-white flex flex-col gap-y-1">
               <p className="text-sm font-bold">Revenue</p>
               <h3 className="text-lg font-semibold">$42,562</h3>
@@ -358,7 +358,7 @@ const Analytics = () => {
               <MonetizationOnTwoToneIcon className="w-24 h-24 text-primary-400" />
             </div>
           </div>
-          <div className="col-span-1 flex justify-between items-center pl-6 pr-5 py-2 rounded-md bg-secondary-500">
+          <div className="col-span-2 sm:col-span-1 flex justify-between items-center pl-6 pr-5 py-2 rounded-md bg-secondary-500">
             <div className="text-white flex flex-col gap-y-1">
               <p className="text-sm font-bold">Orders Received</p>
               <h3 className="text-lg font-semibold">486</h3>
@@ -370,12 +370,12 @@ const Analytics = () => {
           </div>
         </div>
         {/* 5 */}
-        <div className="bg-light rounded-md col-span-4 row-span-9">
+        <div className="bg-light rounded-md col-span-6 lg:col-span-4 row-span-9">
           <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
             Latest Customers
           </h2>
           <TableContainer sx={{ maxHeight: "24rem" }} className="revenueList">
-            <Table stickyHeader>
+            <Table stickyHeader sx={{ minWidth : "500px"}}>
               <TableHead>
                 <TableRow>
                   <TableCell className="font-bold" align="left">
@@ -396,13 +396,15 @@ const Analytics = () => {
                 {customersData.map((c) => {
                   return (
                     <TableRow key={c.id}>
-                      <TableCell align="left">
+                      <TableCell align="left" className="w-fit">
+                        <div>
                         <Image
                           src={c.flag}
                           alt={c.country}
                           width={30}
                           height={30}
                         />
+                        </div>
                       </TableCell>
                       <TableCell align="left">{c.country}</TableCell>
                       <TableCell align="left">{c.name}</TableCell>
@@ -420,8 +422,8 @@ const Analytics = () => {
           </div>
         </div>
         {/* 6 */}
-        <div className="col-span-2 w-full flex flex-col justify-center gap-y-6">
-          <div className="relative overflow-hidden flex justify-center items-center bg-primary-700 rounded-md p-8">
+        <div className="col-span-6 lg:col-span-2 w-full grid grid-cols-2 gap-6">
+          <div className="col-span-2 sm:col-span-1 lg:col-span-2 relative overflow-hidden flex justify-center items-center bg-primary-700 rounded-md p-8">
             <div className="absolute -left-4 -bottom-5">
               <AccountCircleTwoToneIcon className="w-24 h-24 text-primary-400 rotate-[35deg]" />
             </div>
@@ -430,7 +432,7 @@ const Analytics = () => {
               <p className="text-sm">Daily user</p>
             </div>
           </div>
-          <div className="relative overflow-hidden flex justify-center items-center bg-secondary-500 rounded-md p-8">
+          <div className="col-span-2 sm:col-span-1 lg:col-span-2 relative overflow-hidden flex justify-center items-center bg-secondary-500 rounded-md p-8">
             <div className="absolute -left-4 -bottom-5">
               <DescriptionOutlinedIcon className="w-24 h-24 text-secondary-300 rotate-[35deg]" />
             </div>
