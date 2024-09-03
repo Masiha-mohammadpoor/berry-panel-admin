@@ -76,13 +76,18 @@ export const barChartOptions = {
   },
   responsive: [
     {
-      breakpoint: 480,
+      breakpoint: 640,
       options: {
         legend: {
           position: "bottom",
           offsetX: -10,
           offsetY: 0,
         },
+        plotOptions: {
+          bar: {
+            columnWidth: 10, // 'all', 'last'
+          },
+        },      
       },
     },
   ],

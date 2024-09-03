@@ -71,11 +71,11 @@ const Dashboard = () => {
 
   return (
     <section>
-      <article className="grid grid-cols-6 gap-x-6">
+      <article className="grid grid-cols-6 gap-x-6 gap-y-6 lg:gap-y-0 grid-rows-6">
         {/* 1 */}
-        <div className="col-span-2 bg-primary-700 rounded-lg p-4 relative overflow-hidden">
-          <div className="absolute bottom-24 left-28 bg-primary-800 w-52 h-52 rounded-full"></div>
-          <div className="absolute bottom-14 left-44 bg-primary-900 w-52 h-52 rounded-full"></div>
+        <div className="col-span-6 md:col-span-3 lg:col-span-2 row-span-6 bg-primary-700 rounded-lg p-4 relative overflow-hidden">
+          <div className="absolute bottom-24 -right-10 bg-primary-800 w-52 h-52 rounded-full"></div>
+          <div className="absolute bottom-14 -right-24 bg-primary-900 w-52 h-52 rounded-full"></div>
           <div className="w-full h-12 flex justify-between items-start relative">
             <IconButton className="absolute bottom-0 flex justify-center items-center cursor-pointer p-2.5 rounded-md bg-primary-900 hover:bg-primary-900 text-light">
               <PaymentIcon fontSize="small" />
@@ -98,9 +98,9 @@ const Dashboard = () => {
           </p>
         </div>
         {/* 2 */}
-        <div className="col-span-2 bg-secondary-500 rounded-lg p-4 relative overflow-hidden">
-          <div className="absolute bottom-24 left-28 bg-secondary-600 w-52 h-52 rounded-full"></div>
-          <div className="absolute bottom-14 left-44 bg-secondary-700 w-52 h-52 rounded-full"></div>
+        <div className="col-span-6 md:col-span-3 lg:col-span-2 row-span-6 bg-secondary-500 rounded-lg p-4 relative overflow-hidden">
+          <div className="absolute bottom-24 -right-10 bg-secondary-600 w-52 h-52 rounded-full"></div>
+          <div className="absolute bottom-14 -right-24 bg-secondary-700 w-52 h-52 rounded-full"></div>
           <div className="w-full h-12 flex justify-between items-start relative">
             <IconButton className="absolute bottom-0 flex justify-center items-center cursor-pointer p-2.5 rounded-md bg-secondary-700 hover:bg-secondary-700 text-light">
               <ShoppingBagOutlinedIcon fontSize="small" />
@@ -149,8 +149,8 @@ const Dashboard = () => {
           </div>
         </div>
         {/* 3 */}
-        <div className="col-span-2 rounded-lg grid grid-rows-2 gap-y-4">
-          <div className="relative bg-secondary-500 rounded-lg flex items-center px-4 overflow-hidden">
+        <div className="col-span-6 md:col-span-3 lg:col-span-2 row-span-6 rounded-lg grid grid-rows-2 gap-y-4">
+          <div className="h-20 lg:h-auto relative bg-secondary-500 rounded-lg flex items-center px-4 overflow-hidden row-span-1">
             <div className="absolute w-28 h-28 rounded-full bg-secondary-400 opacity-50 -right-8 bottom-10"></div>
             <div className="absolute w-28 h-28 rounded-full bg-secondary-400 opacity-50 -right-14 top-3"></div>
             <IconButton className="mr-4 flex justify-center items-center cursor-pointer p-3 rounded-md bg-secondary-700 text-light hover:bg-secondary-700">
@@ -161,7 +161,7 @@ const Dashboard = () => {
               <p className="text-xs">Total Income</p>
             </div>
           </div>
-          <div className="relative bg-light rounded-lg flex items-center px-4 overflow-hidden">
+          <div className="h-20 lg:h-auto relative bg-light rounded-lg flex items-center px-4 overflow-hidden row-span-1">
             <div className="absolute w-28 h-28 rounded-full bg-warning-300 opacity-50 -right-14 top-3"></div>
             <div className="absolute w-28 h-28 rounded-full bg-warning-300 opacity-50 -right-8 bottom-10"></div>
             <IconButton className="mr-4 flex justify-center items-center cursor-pointer p-3 rounded-md bg-warning-100 text-warning-400 hover:bg-warning-100">
@@ -175,9 +175,9 @@ const Dashboard = () => {
         </div>
       </article>
       {/* chart */}
-      <article className="grid grid-cols-6 gap-x-6 mt-6">
+      <article className="grid grid-cols-6 gap-x-6 gap-y-6 lg:gap-y-0 mt-6">
         {/* Total Growth */}
-        <div className="col-span-4 bg-light rounded-lg p-4">
+        <div className="col-span-6 lg:col-span-4 bg-light rounded-lg p-4">
           <div className="w-full flex justify-between items-center">
             <div className="flex flex-col gap-y-2">
               <p className="text-xs text-gray-600">Total Growth</p>
@@ -203,7 +203,7 @@ const Dashboard = () => {
               </FormControl>
             </div>
           </div>
-          <div className="mt-4 pr-5 p-4 h-auto">
+          <div className="mt-4 lg:pr-5 lg:p-4 h-auto">
             <Chart
               options={barChartOptions}
               series={[
@@ -234,7 +234,7 @@ const Dashboard = () => {
           </div>
         </div>
         {/* Popular Stocks */}
-        <div className="col-span-2 bg-light rounded-lg p-4">
+        <div className="col-span-6 lg:col-span-2 bg-light rounded-lg p-4">
           <div className="w-full flex justify-between items-center">
             <h2 className="font-semibold">Popular Stocks</h2>
             <div>
