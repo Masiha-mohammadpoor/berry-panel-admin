@@ -21,15 +21,17 @@ import SearchIcon from "@mui/icons-material/Search";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
+import useMenuMobile from "@/hooks/useMenuMobile";
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
   const [openSearch, setOpenSearch] = useState(false);
+  const {openMenuMobile , setOpenMenuMobile} = useMenuMobile();
 
   return (
     <nav className="flex justify-between items-center lg:px-3 px-1 lg:pr-4">
       <div className="w-96 flex gap-x-3">
-        <IconButton className="rounded-md lg:hidden transition bg-primary-100 text-primary-800 p-1.5 hover:bg-primary-800 hover:text-primary-100">
+        <IconButton onClick={() => setOpenMenuMobile(true)} className="rounded-md lg:hidden transition bg-primary-100 text-primary-800 p-1.5 hover:bg-primary-800 hover:text-primary-100">
           <MenuIcon />
         </IconButton>
         <IconButton

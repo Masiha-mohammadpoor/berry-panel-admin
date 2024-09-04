@@ -10,11 +10,15 @@ import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import useMenu from "@/hooks/useMenu";
+import useMenuMobile from "@/hooks/useMenuMobile";
+import CloseIcon from "@mui/icons-material/Close";
+
 
 const Sidebar = () => {
 
   const pathname = usePathname();
   const {openMenu , setOpenMenu} = useMenu();
+  const {setOpenMenuMobile } = useMenuMobile();
 
 
   return (
@@ -25,13 +29,18 @@ const Sidebar = () => {
           <h3 className="font-bold text-2xl">BERRY</h3>
         </div>
         <div>
-          <IconButton
+        <IconButton
             onClick={() => setOpenMenu(!openMenu)}
-            aria-label="delete"
-            className="rounded-md transition bg-primary-100 text-primary-800 p-2 hover:bg-primary-800 hover:text-primary-100"
+            className="rounded-md hidden lg:flex transition bg-primary-100 text-primary-800 p-2 hover:bg-primary-800 hover:text-primary-100"
           >
             <MenuIcon />
           </IconButton>
+          <IconButton
+              onClick={() => setOpenMenuMobile(false)}
+              className="rounded-md lg:hidden transition bg-error-100 text-error-800 p-1.5 hover:bg-error-800 hover:text-error-100"
+            >
+              <CloseIcon />
+            </IconButton>
         </div>
       </article>
       <article className="mt-10">

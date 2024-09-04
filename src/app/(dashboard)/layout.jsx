@@ -5,11 +5,13 @@ import Sidebar from "@/components/Sidebar";
 import { StyledEngineProvider } from "@mui/material";
 import { Inter } from "next/font/google";
 import useMenu from "@/hooks/useMenu";
+import useMenuMobile from "@/hooks/useMenuMobile";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   const { openMenu } = useMenu();
+  const {openMenuMobile , setOpenMenuMobile} = useMenuMobile();
 
   return (
     <html lang="en">
@@ -17,8 +19,12 @@ export default function RootLayout({ children }) {
         <body
           className={`${inter.className} pt-2 fixed overflow-hidden`}
         >
-          <main className={`w-screen grid ${openMenu ? "grid-cols-5" : "grid-cols-16"}`}>
-          <aside className={`lg:col-span-1 h-screen relative w-60 lg:w-auto bg-light z-50 lg:z-auto -left-60 lg:left-0 lg:row-start-1`}>
+          <aside className={`block lg:hidden h-screen relative top-0 w-72 lg:w-auto bg-light z-50 ${openMenuMobile ? "left-0" : "-left-72"} pr-3 overflow-y-auto revenueList`}>
+            <Sidebar />
+          </aside>
+
+          <main className={`w-screen grid ${openMenu ? "grid-cols-5" : "grid-cols-16"} z-30 fixed lg:static top-0`}>
+          <aside className={`lg:col-span-1 hidden lg:block h-screen relative bg-light z-50 lg:z-auto -left-60 lg:left-0 lg:row-start-1`}>
             <Sidebar />
           </aside>
           <main className={`${openMenu ? "col-span-5 lg:col-span-4" : "lg:col-span-15 col-span-16"} mx-2 z-40 lg:z-auto row-start-1`}>
