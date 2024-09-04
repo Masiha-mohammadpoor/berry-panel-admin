@@ -6,7 +6,7 @@ const useMenuMobile = () => {
 
   useEffect(() => {
     setOpenMenuMobile(false);
-  }, []);
+  });
 
 
   return {openMenuMobile , setOpenMenuMobile};
