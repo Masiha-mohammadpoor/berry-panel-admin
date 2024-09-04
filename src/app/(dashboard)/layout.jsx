@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         <body
           className={`${inter.className} pt-2 fixed overflow-hidden`}
         >
-          <aside className={`block lg:hidden h-screen relative top-0 w-72 lg:w-auto bg-light z-50 ${openMenuMobile ? "left-0" : "-left-72"} pr-3 overflow-y-auto revenueList`}>
+          <aside className={`transition-all duration-300 block lg:hidden h-screen relative top-0 w-64 lg:w-auto bg-light z-50 ${openMenuMobile ? "left-0" : "-left-64"} pr-3 overflow-y-auto revenueList`}>
             <Sidebar />
           </aside>
 

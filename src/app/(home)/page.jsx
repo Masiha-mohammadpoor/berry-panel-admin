@@ -1,7 +1,13 @@
+"use client";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+
 const Home = () => {
-  return (
-    <main>Home</main>
-  );
-}
- 
+  const router = useRouter();
+  useEffect(() => {
+    router.replace("/dashboard/default");
+  });
+  return <main>Home</main>;
+};
+
 export default Home;
