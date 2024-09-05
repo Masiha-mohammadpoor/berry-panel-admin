@@ -23,6 +23,8 @@ import { IoMdArrowDropup } from "react-icons/io";
 import { IoMdArrowDropdown } from "react-icons/io";
 import Image from "next/image";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
+import { Suspense } from "react";
+
 
 const revenueData = [
   {
@@ -162,6 +164,7 @@ const customersData = [
 
 const Analytics = () => {
   return (
+    <Suspense fallback={<p>loading ...</p>}>
     <section className="w-full">
       {/*  */}
       <article className="grid grid-cols-6 gap-6">
@@ -444,6 +447,7 @@ const Analytics = () => {
         </div>
       </article>
     </section>
+    </Suspense>
   );
 };
 

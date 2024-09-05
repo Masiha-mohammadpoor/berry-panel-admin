@@ -18,7 +18,7 @@ import { lineChartOptions, barChartOptions, areaCharOptions } from "@/constants/
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-
+import { Suspense } from "react";
 
 const stocksData = [
   {
@@ -70,6 +70,7 @@ const Dashboard = () => {
   };
 
   return (
+    <Suspense fallback={<p>loading..</p>}>
     <section>
       <article className="grid grid-cols-6 gap-x-6 gap-y-6 lg:gap-y-0 grid-rows-6">
         {/* 1 */}
@@ -344,6 +345,7 @@ const Dashboard = () => {
         </div>
       </article>
     </section>
+    </Suspense>
   );
 };
 

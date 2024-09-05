@@ -6,6 +6,7 @@ import { StyledEngineProvider } from "@mui/material";
 import { Inter } from "next/font/google";
 import useMenu from "@/hooks/useMenu";
 import useMenuMobile from "@/hooks/useMenuMobile";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,9 +33,11 @@ export default function RootLayout({ children }) {
               <Navigation />
             </header>
             <section className="w-full mt-3 h-screen col-span-1 bg-body rounded-t-xl pb-28 overflow-x-hidden overflow-y-scroll sticky top-16">
+              <Suspense fallback={<p>loading ...</p>}>
               <section className="w-full rounded-t-xl pt-5 px-4 lg:px-10 w-fll overflow-y-auto">
                 {children}
               </section>
+              </Suspense>
             </section>
           </main>
           </main>

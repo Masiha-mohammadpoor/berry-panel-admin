@@ -10,9 +10,11 @@ import { LuFacebook } from "react-icons/lu";
 import { FiTwitter, FiYoutube } from "react-icons/fi";
 import TrendingDownIcon from "@mui/icons-material/TrendingDown";
 import { IconButton } from "@mui/material";
+import { Suspense } from "react";
 
 const Charts = () => {
   return (
+    <Suspense fallback={<p>loading...</p>}>
     <section className="flex flex-col gap-y-6">
       {/* 1 */}
       <article className="bg-light rounded-md flex justify-between p-4">
@@ -258,6 +260,7 @@ const Charts = () => {
         </div>
       </article>
     </section>
+    </Suspense>
   );
 };
 
