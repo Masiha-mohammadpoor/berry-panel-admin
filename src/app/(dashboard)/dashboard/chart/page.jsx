@@ -1,16 +1,16 @@
 "use client";
-import Chart from "react-apexcharts";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoHome } from "react-icons/io5";
 import { LuFacebook } from "react-icons/lu";
 import { FiTwitter, FiYoutube } from "react-icons/fi";
 import TrendingDownIcon from "@mui/icons-material/TrendingDown";
 import { IconButton } from "@mui/material";
-import { Suspense } from "react";
+import dynamic from "next/dynamic";
+const Chart = dynamic(() => import("react-apexcharts") , {ssr : false})
+
 
 const Charts = () => {
   return (
-    <Suspense fallback={<p>loading...</p>}>
       <section className="flex flex-col gap-y-6">
         {/* 1 */}
         <article className="bg-light rounded-md flex justify-between p-4">
@@ -513,7 +513,6 @@ const Charts = () => {
           </div>
         </article>
       </section>
-    </Suspense>
   );
 };
 

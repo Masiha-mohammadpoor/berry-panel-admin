@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { LuFacebook } from "react-icons/lu";
 import { FiTwitter, FiYoutube } from "react-icons/fi";
-import Chart from "react-apexcharts";
+
 import { GoShareAndroid } from "react-icons/go";
 import { CiCreditCard1 } from "react-icons/ci";
 import { MdOutlineSensors } from "react-icons/md";
@@ -23,7 +23,8 @@ import { IoMdArrowDropup } from "react-icons/io";
 import { IoMdArrowDropdown } from "react-icons/io";
 import Image from "next/image";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
-import { Suspense } from "react";
+import dynamic from "next/dynamic";
+const Chart = dynamic(() => import("react-apexcharts") , {ssr : false})
 
 
 const revenueData = [
@@ -162,9 +163,9 @@ const customersData = [
   },
 ];
 
+
 const Analytics = () => {
   return (
-    <Suspense fallback={<p>loading ...</p>}>
     <section className="w-full">
       {/*  */}
       <article className="grid grid-cols-6 gap-6">
@@ -447,7 +448,6 @@ const Analytics = () => {
         </div>
       </article>
     </section>
-    </Suspense>
   );
 };
 
