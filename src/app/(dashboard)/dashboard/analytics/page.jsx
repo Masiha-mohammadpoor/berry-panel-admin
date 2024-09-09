@@ -12,7 +12,6 @@ import {
 } from "@mui/material";
 import { LuFacebook } from "react-icons/lu";
 import { FiTwitter, FiYoutube } from "react-icons/fi";
-
 import { GoShareAndroid } from "react-icons/go";
 import { CiCreditCard1 } from "react-icons/ci";
 import { MdOutlineSensors } from "react-icons/md";
@@ -24,8 +23,8 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import Image from "next/image";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import dynamic from "next/dynamic";
-const Chart = dynamic(() => import("react-apexcharts") , {ssr : false})
-
+import { areaChartOptionsInAnalytics } from "@/constants/chartOptions";
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const revenueData = [
   {
@@ -163,7 +162,6 @@ const customersData = [
   },
 ];
 
-
 const Analytics = () => {
   return (
     <section className="w-full">
@@ -205,56 +203,7 @@ const Analytics = () => {
           <div className="mt-16">
             <Chart
               height={170}
-              options={{
-                chart: {
-                  toolbar: {
-                    show: false,
-                  },
-                  height: 100,
-                  type: "area",
-                  sparkline: {
-                    enabled: true,
-                  },
-                },
-                colors: ["#5b21b6", "#3b82f6", "#f43f5e"],
-                grid: {
-                  show: false,
-                },
-                dataLabels: {
-                  enabled: false,
-                },
-                stroke: {
-                  curve: "smooth",
-                  width: 2,
-                },
-                xaxis: {
-                  show: false,
-                  labels: {
-                    show: false,
-                  },
-                  axisBorder: {
-                    show: false,
-                  },
-                  axisTicks: {
-                    show: false,
-                  },
-                },
-                yaxis: {
-                  labels: {
-                    show: false,
-                  },
-                },
-                fill: {
-                  type: "gradient",
-                  gradient: {
-                    shade: "light",
-                    type: "vertical",
-                    shadeIntensity: 0,
-                    opacityFrom: 0.4,
-                    opacityTo: 0,
-                  },
-                },
-              }}
+              options={areaChartOptionsInAnalytics}
               series={[
                 {
                   name: "Facebook",
@@ -379,7 +328,7 @@ const Analytics = () => {
             Latest Customers
           </h2>
           <TableContainer sx={{ maxHeight: "24rem" }} className="revenueList">
-            <Table stickyHeader sx={{ minWidth : "500px"}}>
+            <Table stickyHeader sx={{ minWidth: "500px" }}>
               <TableHead>
                 <TableRow>
                   <TableCell className="font-bold" align="left">
@@ -402,12 +351,12 @@ const Analytics = () => {
                     <TableRow key={c.id}>
                       <TableCell align="left" className="w-fit">
                         <div>
-                        <Image
-                          src={c.flag}
-                          alt={c.country}
-                          width={30}
-                          height={30}
-                        />
+                          <Image
+                            src={c.flag}
+                            alt={c.country}
+                            width={30}
+                            height={30}
+                          />
                         </div>
                       </TableCell>
                       <TableCell align="left">{c.country}</TableCell>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { IoHome } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
 import {
@@ -13,22 +13,20 @@ import {
   Typography,
 } from "@mui/material";
 import { FormLabel } from "@mui/material";
-import { FiPlus } from "react-icons/fi";
 import Avatar from "@mui/material/Avatar";
 import AddIcon from "@mui/icons-material/Add";
 import AccessTimeTwoToneIcon from "@mui/icons-material/AccessTimeTwoTone";
-import { styled } from '@mui/material/styles';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import BusinessCenterTwoToneIcon from '@mui/icons-material/BusinessCenterTwoTone';
-import DoneAllIcon from '@mui/icons-material/DoneAll';
-import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
+import { styled } from "@mui/material/styles";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import BusinessCenterTwoToneIcon from "@mui/icons-material/BusinessCenterTwoTone";
+import DoneAllIcon from "@mui/icons-material/DoneAll";
+import AccountCircleTwoToneIcon from "@mui/icons-material/AccountCircleTwoTone";
 
 const Data = () => {
-
   const StyledBadgeSuccess = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
-      backgroundColor : "#22c55e",
-      color : "#22c55e",
+      backgroundColor: "#22c55e",
+      color: "#22c55e",
       boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
       "&::after": {
         position: "absolute",
@@ -46,8 +44,8 @@ const Data = () => {
 
   const StyledBadgeError = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
-      backgroundColor : "#f43f5e",
-      color : "#f43f5e",
+      backgroundColor: "#f43f5e",
+      color: "#f43f5e",
       boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
       "&::after": {
         position: "absolute",
@@ -65,8 +63,8 @@ const Data = () => {
 
   const StyledBadgeWarning = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
-      backgroundColor : "#eab308",
-      color : "#eab308",
+      backgroundColor: "#eab308",
+      color: "#eab308",
       boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
       "&::after": {
         position: "absolute",
@@ -81,8 +79,6 @@ const Data = () => {
       },
     },
   }));
-
-
 
   return (
     <section className="flex flex-col gap-y-6">
@@ -281,11 +277,11 @@ const Data = () => {
             User Activity
           </h2>
           <div className="w-full p-6 flex flex-col gap-y-7">
-          <div className="w-full flex justify-between items-center">
+            <div className="w-full flex justify-between items-center">
               <div className="flex items-center gap-x-3">
                 <StyledBadgeSuccess
                   overlap="circular"
-                  anchorOrigin={{ vertical: "bottom", horizontal: "right"}}
+                  anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
                   variant="dot"
                 >
                   <Avatar alt="user" src="/images/avatar-1.png" />
@@ -305,7 +301,7 @@ const Data = () => {
               <div className="flex items-center gap-x-3">
                 <StyledBadgeError
                   overlap="circular"
-                  anchorOrigin={{ vertical: "bottom", horizontal: "right"}}
+                  anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
                   variant="dot"
                 >
                   <Avatar alt="user" src="/images/avatar-2.png" />
@@ -325,7 +321,7 @@ const Data = () => {
               <div className="flex items-center gap-x-3">
                 <StyledBadgeWarning
                   overlap="circular"
-                  anchorOrigin={{ vertical: "bottom", horizontal: "right"}}
+                  anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
                   variant="dot"
                 >
                   <Avatar alt="user" src="/images/avatar-3.png" />
@@ -345,7 +341,7 @@ const Data = () => {
               <div className="flex items-center gap-x-3">
                 <StyledBadgeSuccess
                   overlap="circular"
-                  anchorOrigin={{ vertical: "bottom", horizontal: "right"}}
+                  anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
                   variant="dot"
                 >
                   <Avatar alt="user" src="/images/avatar-4.png" />
@@ -363,63 +359,84 @@ const Data = () => {
             </div>
           </div>
           <div className="p-5 border-t border-t-gray-200 w-full flex justify-end sticky bottom-0">
-            <Button variant="text" size="small" className="capitalize font-semibold">View All Projects</Button>
+            <Button
+              variant="text"
+              size="small"
+              className="capitalize font-semibold"
+            >
+              View All Projects
+            </Button>
           </div>
         </div>
         {/* 2 */}
         <div className="col-span-6 md:col-span-3 rounded-md bg-light overflow-x-scroll revenueList">
           <div className="min-w-96">
-          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
-            Messages
-          </h2>
-          <div className="w-full p-6 flex flex-col gap-y-6">
-          <div className="flex items-center gap-x-4">
-              <p className="text-xs text-gray-500">2 min ago</p>
-              <div className="w-11 h-11 rounded-full flex justify-center items-center bg-secondary-500">
-                <TwitterIcon className="w-6 h-6 text-white"/>
+            <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
+              Messages
+            </h2>
+            <div className="w-full p-6 flex flex-col gap-y-6">
+              <div className="flex items-center gap-x-4">
+                <p className="text-xs text-gray-500">2 min ago</p>
+                <div className="w-11 h-11 rounded-full flex justify-center items-center bg-secondary-500">
+                  <TwitterIcon className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">+ 1652 Followers</p>
+                  <p className="text-xs text-gray-500">
+                    You’re getting more and more followers
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="font-semibold text-sm">+ 1652 Followers</p>
-                <p className="text-xs text-gray-500">You’re getting more and more followers</p>
+              <div className="flex items-center gap-x-4">
+                <p className="text-xs text-gray-500">4 hrs ago</p>
+                <div className="w-11 h-11 rounded-full flex justify-center items-center bg-error-500">
+                  <BusinessCenterTwoToneIcon className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">
+                    + 5 New Products were added!
+                  </p>
+                  <p className="text-xs text-gray-500">Congratulations!</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-x-4">
+                <p className="text-xs text-gray-500">1 day ago</p>
+                <div className="w-11 h-11 rounded-full flex justify-center items-center bg-success-500">
+                  <DoneAllIcon className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">
+                    Database backup completed!
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    Download the latest backup.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-x-4">
+                <p className="text-xs text-gray-500">2 day ago</p>
+                <div className="w-11 h-11 rounded-full flex justify-center items-center bg-secondary-500">
+                  <AccountCircleTwoToneIcon className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">+2 Friend Requests</p>
+                  <p className="text-xs text-gray-500">
+                    This is great, keep it up!
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="flex items-center gap-x-4">
-              <p className="text-xs text-gray-500">4 hrs ago</p>
-              <div className="w-11 h-11 rounded-full flex justify-center items-center bg-error-500">
-                <BusinessCenterTwoToneIcon className="w-6 h-6 text-white"/>
-              </div>
-              <div>
-                <p className="font-semibold text-sm">+ 5 New Products were added!</p>
-                <p className="text-xs text-gray-500">Congratulations!</p>
-              </div>
+            <div className="p-5 border-t border-t-gray-200 w-full flex justify-end sticky bottom-0">
+              <Button
+                variant="text"
+                size="small"
+                className="capitalize font-semibold"
+              >
+                View All Projects
+              </Button>
             </div>
-            <div className="flex items-center gap-x-4">
-              <p className="text-xs text-gray-500">1 day ago</p>
-              <div className="w-11 h-11 rounded-full flex justify-center items-center bg-success-500">
-                <DoneAllIcon className="w-6 h-6 text-white"/>
-              </div>
-              <div>
-                <p className="font-semibold text-sm">Database backup completed!</p>
-                <p className="text-xs text-gray-500">Download the latest backup.</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-x-4">
-              <p className="text-xs text-gray-500">2 day ago</p>
-              <div className="w-11 h-11 rounded-full flex justify-center items-center bg-secondary-500">
-                <AccountCircleTwoToneIcon className="w-6 h-6 text-white"/>
-              </div>
-              <div>
-                <p className="font-semibold text-sm">+2 Friend Requests</p>
-                <p className="text-xs text-gray-500">This is great, keep it up!</p>
-              </div>
-            </div>
-          </div>
-          <div className="p-5 border-t border-t-gray-200 w-full flex justify-end sticky bottom-0">
-            <Button variant="text" size="small" className="capitalize font-semibold">View All Projects</Button>
-          </div>
           </div>
         </div>
-
       </article>
     </section>
   );

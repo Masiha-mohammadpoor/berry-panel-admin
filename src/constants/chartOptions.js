@@ -1,4 +1,4 @@
-export const lineChartOptions = {
+export const lineChartOptionsInDefault = {
   stroke: {
     curve: "smooth",
     width: 3,
@@ -54,7 +54,7 @@ export const lineChartOptions = {
   },
 };
 
-export const barChartOptions = {
+export const barChartOptionsInDefault = {
   chart: {
     type: "bar",
     stacked: true,
@@ -142,7 +142,7 @@ export const barChartOptions = {
   },
 };
 
-export const areaCharOptions = {
+export const areaCharOptionsInDefault = {
   chart: {
     toolbar: {
       show: false,
@@ -208,6 +208,57 @@ export const areaCharOptions = {
 
 }
 
+export const areaChartOptionsInAnalytics = {
+  chart: {
+    toolbar: {
+      show: false,
+    },
+    height: 100,
+    type: "area",
+    sparkline: {
+      enabled: true,
+    },
+  },
+  colors: ["#5b21b6", "#3b82f6", "#f43f5e"],
+  grid: {
+    show: false,
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  stroke: {
+    curve: "smooth",
+    width: 2,
+  },
+  xaxis: {
+    show: false,
+    labels: {
+      show: false,
+    },
+    axisBorder: {
+      show: false,
+    },
+    axisTicks: {
+      show: false,
+    },
+  },
+  yaxis: {
+    labels: {
+      show: false,
+    },
+  },
+  fill: {
+    type: "gradient",
+    gradient: {
+      shade: "light",
+      type: "vertical",
+      shadeIntensity: 0,
+      opacityFrom: 0.4,
+      opacityTo: 0,
+    },
+  },
+}
+
 export const areaCharOptionsInChartsPage = {
   chart: {
     toolbar: {
@@ -270,11 +321,11 @@ export const areaCharOptionsInChartsPage = {
 }
 
 export const circleChartInChartPage = {
-    chart: {
-    type: 'donut',
+  chart: {
+    type: "donut",
   },
-  colors:['#e11d48', '#0ea5e9', '#8b5cf6'],
-  labels: ['youtube', 'Facebook', 'Twitter'],
+  colors: ["#e11d48", "#0ea5e9", "#8b5cf6"],
+  labels: ["youtube", "Facebook", "Twitter"],
   legend: {
     position: "bottom",
     offsetY: 10,
@@ -288,18 +339,6 @@ export const circleChartInChartPage = {
     },
   },
   dataLabels: {
-    enabled: false
+    enabled: false,
   },
-
-  // responsive: [{
-  //   breakpoint: 480,
-  //   options: {
-  //     chart: {
-  //       width: 200
-  //     },
-  //     legend: {
-  //       position: 'bottom'
-  //     }
-  //   }
-  // }]
 }

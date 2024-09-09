@@ -308,7 +308,12 @@ const Statistics = () => {
         <div className="col-span-10 md:col-span-6 lg:col-span-3 flex flex-col gap-y-2">
           <p className="text-xs text-gray-600">Published Project</p>
           <h3 className="text-lg font-semibold">532</h3>
-          <LinearProgress variant="determinate"  color="inherit" className="bg-primary-200 text-primary-500" value={30} />
+          <LinearProgress
+            variant="determinate"
+            color="inherit"
+            className="bg-primary-200 text-primary-500"
+            value={30}
+          />
         </div>
         <div className="col-span-10 md:col-span-6 lg:col-span-3 flex flex-col gap-y-2">
           <p className="text-xs text-gray-600">Completed Task</p>
@@ -431,7 +436,7 @@ const Statistics = () => {
             <p className="text-xs text-gray-600">sunny</p>
           </div>
           <div className="w-1/2 h-full bg-secondary-500 flex flex-col justify-center items-center gap-y-2">
-            <WbSunnyTwoToneIcon className="w-12 h-12 text-white"/>
+            <WbSunnyTwoToneIcon className="w-12 h-12 text-white" />
             <p className="text-xs text-white">New York , NY</p>
           </div>
         </div>
