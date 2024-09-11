@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import Link from "next/link";
+
 const Home = () => {
   return (
     <main className="w-full flex justify-center items-center mt-20">

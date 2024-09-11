@@ -8,9 +8,7 @@ import {
   Fab,
   FormControlLabel,
   FormGroup,
-  IconButton,
   LinearProgress,
-  Typography,
 } from "@mui/material";
 import { FormLabel } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
@@ -36,7 +34,7 @@ const Data = () => {
         height: "100%",
         borderRadius: "50%",
         animation: "ripple 1.2s infinite ease-in-out",
-        border: "1px solid currentColor",
+        border: "1px solid transparent",
         content: '""',
       },
     },
@@ -55,7 +53,7 @@ const Data = () => {
         height: "100%",
         borderRadius: "50%",
         animation: "ripple 1.2s infinite ease-in-out",
-        border: "1px solid currentColor",
+        border: "1px solid transparent",
         content: '""',
       },
     },
@@ -74,7 +72,7 @@ const Data = () => {
         height: "100%",
         borderRadius: "50%",
         animation: "ripple 1.2s infinite ease-in-out",
-        border: "1px solid currentColor",
+        border: "1px solid transparent",
         content: '""',
       },
     },
@@ -83,7 +81,7 @@ const Data = () => {
   return (
     <section className="flex flex-col gap-y-6">
       {/* 1 */}
-      <article className="bg-light rounded-md flex justify-between p-4">
+      <article className="bg-light dark:bg-dark-800 rounded-md flex justify-between p-4">
         <h2 className="text-lg font-semibold">Data</h2>
         <div className="flex items-center sm:gap-x-4 gap-x-2">
           <div>
@@ -92,53 +90,75 @@ const Data = () => {
           <div>
             <IoIosArrowForward className="text-gray-500" />
           </div>
-          <p className="font-semibold text-sm text-gray-500">Data</p>
+          <p className="font-semibold text-sm text-gray-500 dark:text-white">
+            Data
+          </p>
         </div>
       </article>
       {/* 2 */}
       <article className="grid grid-cols-6 gap-6">
         {/* 1 */}
-        <div className="rounded-md bg-light col-span-6 md:col-span-3 lg:col-span-2">
-          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
+        <div className="rounded-md bg-light dark:bg-dark-800 col-span-6 md:col-span-3 lg:col-span-2">
+          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200 dark:border-b-gray-600">
             To Do List
           </h2>
           <div className="p-6">
             <FormGroup className="w-full flex flex-col gap-y-1">
               <FormControlLabel
                 control={<Checkbox defaultChecked />}
-                label={<FormLabel>Check your Email</FormLabel>}
+                label={
+                  <FormLabel className="dark:text-white">
+                    Check your Email
+                  </FormLabel>
+                }
               />
               <FormControlLabel
                 control={<Checkbox defaultChecked />}
-                label={<FormLabel>Make YouTube Video</FormLabel>}
+                label={
+                  <FormLabel className="dark:text-white">
+                    Make YouTube Video
+                  </FormLabel>
+                }
               />
               <FormControlLabel
                 control={<Checkbox defaultChecked />}
-                label={<FormLabel>Create Banner</FormLabel>}
+                label={
+                  <FormLabel className="dark:text-white">
+                    Create Banner
+                  </FormLabel>
+                }
               />
               <FormControlLabel
                 control={<Checkbox />}
-                label={<FormLabel>Upload Project</FormLabel>}
+                label={
+                  <FormLabel className="dark:text-white">
+                    Upload Project
+                  </FormLabel>
+                }
               />
               <FormControlLabel
                 control={<Checkbox />}
-                label={<FormLabel>Update Task</FormLabel>}
+                label={
+                  <FormLabel className="dark:text-white">Update Task</FormLabel>
+                }
               />
               <FormControlLabel
                 control={<Checkbox />}
-                label={<FormLabel>Task Issue</FormLabel>}
+                label={
+                  <FormLabel className="dark:text-white">Task Issue</FormLabel>
+                }
               />
             </FormGroup>
           </div>
-          <div className="text-lg font-semibold p-5 border-t border-t-gray-200 w-full flex justify-end items-center">
+          <div className="text-lg font-semibold p-5 border-t border-t-gray-200 dark:border-t-gray-600 w-full flex justify-end items-center">
             <Fab size="medium" color="primary" aria-label="add">
               <AddIcon />
             </Fab>
           </div>
         </div>
         {/* 2 */}
-        <div className="rounded-md bg-light col-span-6 md:col-span-3 lg:col-span-2">
-          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
+        <div className="rounded-md bg-light dark:bg-dark-800 col-span-6 md:col-span-3 lg:col-span-2">
+          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200 dark:border-b-gray-600">
             Traffic Sources
           </h2>
           <div className="px-6 py-6 flex flex-col justify-between items-center gap-y-3">
@@ -202,8 +222,8 @@ const Data = () => {
           </div>
         </div>
         {/* 3 */}
-        <div className="rounded-md bg-light col-span-6 md:col-span-3 lg:col-span-2">
-          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
+        <div className="rounded-md bg-light dark:bg-dark-800 col-span-6 md:col-span-3 lg:col-span-2">
+          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200 dark:border-b-gray-600">
             Team Members
           </h2>
           <div className="px-6 py-6 flex flex-col justify-between items-center gap-y-6">
@@ -258,7 +278,7 @@ const Data = () => {
               <p className="text-xs text-gray-500">5 min ago</p>
             </div>
           </div>
-          <div className="p-5 border-t border-t-gray-200 w-full flex justify-end">
+          <div className="p-5 border-t border-t-gray-200 dark:border-t-gray-600 w-full flex justify-end">
             <Button
               variant="text"
               size="small"
@@ -272,8 +292,8 @@ const Data = () => {
       {/* 3 */}
       <article className="grid grid-cols-6 gap-6">
         {/* 1 */}
-        <div className="col-span-6 md:col-span-3 rounded-md bg-light">
-          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
+        <div className="col-span-6 md:col-span-3 rounded-md bg-light dark:bg-dark-800">
+          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200 dark:border-b-gray-600">
             User Activity
           </h2>
           <div className="w-full p-6 flex flex-col gap-y-7">
@@ -358,7 +378,7 @@ const Data = () => {
               </p>
             </div>
           </div>
-          <div className="p-5 border-t border-t-gray-200 w-full flex justify-end sticky bottom-0">
+          <div className="p-5 border-t border-t-gray-200 dark:border-t-gray-600 w-full flex justify-end sticky bottom-0">
             <Button
               variant="text"
               size="small"
@@ -369,9 +389,9 @@ const Data = () => {
           </div>
         </div>
         {/* 2 */}
-        <div className="col-span-6 md:col-span-3 rounded-md bg-light overflow-x-scroll revenueList">
+        <div className="col-span-6 md:col-span-3 rounded-md bg-light dark:bg-dark-800 overflow-x-scroll revenueList">
           <div className="min-w-96">
-            <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
+            <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200 dark:border-b-gray-600">
               Messages
             </h2>
             <div className="w-full p-6 flex flex-col gap-y-6">
@@ -426,7 +446,7 @@ const Data = () => {
                 </div>
               </div>
             </div>
-            <div className="p-5 border-t border-t-gray-200 w-full flex justify-end sticky bottom-0">
+            <div className="p-5 border-t border-t-gray-200 dark:border-t-gray-600 w-full flex justify-end sticky bottom-0">
               <Button
                 variant="text"
                 size="small"

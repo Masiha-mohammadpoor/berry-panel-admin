@@ -11,13 +11,22 @@ import {
   areaChartOptionsInAnalytics,
   circleChartInChartPage,
 } from "@/constants/chartOptions";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const Charts = () => {
+  const { theme: darkmode } = useTheme();
+  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    setTheme(darkmode);
+  }, [darkmode]);
+
   return (
     <section className="flex flex-col gap-y-6">
       {/* 1 */}
-      <article className="bg-light rounded-md flex justify-between p-4">
+      <article className="bg-light dark:bg-dark-800 rounded-md flex justify-between p-4">
         <h2 className="text-lg font-semibold">Chart</h2>
         <div className="flex items-center sm:gap-x-4 gap-x-2">
           <div>
@@ -26,7 +35,9 @@ const Charts = () => {
           <div>
             <IoIosArrowForward className="text-gray-500" />
           </div>
-          <p className="font-semibold text-sm text-gray-500">Chart</p>
+          <p className="font-semibold text-sm text-gray-500 dark:text-white">
+            Chart
+          </p>
         </div>
       </article>
       {/* 2 */}
@@ -124,7 +135,7 @@ const Charts = () => {
       <article className="grid grid-cols-7 gap-6">
         {/* 1 */}
         <div className="col-span-7 lg:col-span-4 rounded-md">
-          <div className="relative overflow-hidden col-span-6 lg:col-span-4 bg-light rounded-md pt-8 row-span-6">
+          <div className="relative overflow-hidden col-span-6 lg:col-span-4 bg-light dark:bg-dark-800 rounded-md pt-8 row-span-6">
             <div className="px-5">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-y-3">
                 <h2 className="font-semibold text-xl">Market Share</h2>
@@ -138,19 +149,19 @@ const Charts = () => {
               </p>
               <div className="mt-5 flex flex-col sm:flex-row gap-6">
                 <div className="flex items-center gap-x-2">
-                  <IconButton className="flex justify-center items-center p-2 rounded-lg bg-primary-200 text-primary-600 hover:bg-primary-200">
+                  <IconButton className="flex justify-center items-center p-2 rounded-lg bg-primary-200 text-primary-600 dark:text-primary-200 dark:bg-primary-600 hover:bg-primary-200">
                     <LuFacebook />
                   </IconButton>
                   <p className="font-bold">+ 45.36%</p>
                 </div>
                 <div className="flex items-center gap-x-2">
-                  <IconButton className="flex justify-center items-center p-2 rounded-lg bg-secondary-200 text-secondary-600 hover:bg-secondary-200">
+                  <IconButton className="flex justify-center items-center p-2 rounded-lg bg-secondary-200 text-secondary-600 dark:text-secondary-200 dark:bg-secondary-600 hover:bg-secondary-200">
                     <FiTwitter />
                   </IconButton>
                   <p className="font-bold">- 50.69%</p>
                 </div>
                 <div className="flex items-center gap-x-2">
-                  <IconButton className="flex justify-center items-center p-2 rounded-lg bg-error-200 text-error-600 hover:bg-error-200">
+                  <IconButton className="flex justify-center items-center p-2 rounded-lg bg-error-200 text-error-600 dark:text-error-200 dark:bg-error-600 hover:bg-error-200">
                     <FiYoutube />
                   </IconButton>
                   <p className="font-bold">+ 16.85%</p>
@@ -161,7 +172,12 @@ const Charts = () => {
             <div className="mt-16">
               <Chart
                 height={170}
-                options={areaChartOptionsInAnalytics}
+                options={{
+                  ...areaChartOptionsInAnalytics,
+                  tooltip: {
+                    theme: theme,
+                  },
+                }}
                 series={[
                   {
                     name: "Facebook",
@@ -182,8 +198,8 @@ const Charts = () => {
           </div>
         </div>
         {/* 2 */}
-        <div className="col-span-7 lg:col-span-3 rounded-md bg-light">
-          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
+        <div className="col-span-7 lg:col-span-3 rounded-md bg-light dark:bg-dark-800">
+          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200 dark:border-b-gray-600">
             Total Revenue
           </h2>
           <div className="p-6">

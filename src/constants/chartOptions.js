@@ -3,7 +3,6 @@ export const lineChartOptionsInDefault = {
     curve: "smooth",
     width: 3,
     colors: ["#fff"],
-    
   },
   colors: ["#fff"],
   chart: {
@@ -61,13 +60,8 @@ export const barChartOptionsInDefault = {
     toolbar: {
       offsetX: -15,
       tools: {
-        download: true,
-        selection: false,
-        zoom: false,
-        zoomin: false,
-        zoomout: false,
-        pan: false,
-        reset: false,
+        download: false,
+        show: false,
       },
     },
     zoom: {
@@ -87,7 +81,7 @@ export const barChartOptionsInDefault = {
           bar: {
             columnWidth: 10, // 'all', 'last'
           },
-        },      
+        },
       },
     },
   ],
@@ -121,17 +115,26 @@ export const barChartOptionsInDefault = {
       "Nov",
       "Dec",
     ],
+    labels: {
+      style: {
+        colors: "#6b7280",
+      },
+    },
   },
   legend: {
     position: "bottom",
     offsetY: 10,
     markers: {
-      size: 10,
+      size: 7,
       shape: "circle",
       offsetX: -5,
+      strokeWidth: 0,
     },
     itemMargin: {
       horizontal: 15,
+    },
+    labels: {
+      colors: "#9ca3af",
     },
   },
   dataLabels: {
@@ -139,6 +142,9 @@ export const barChartOptionsInDefault = {
   },
   fill: {
     opacity: 1,
+  },
+  tooltip: {
+    theme: "dark",
   },
 };
 
@@ -191,22 +197,7 @@ export const areaCharOptionsInDefault = {
       opacityTo: 0.2,
     },
   },
-  tooltip: {
-    fillSeriesColor: false,
-    theme: "light",
-    style: {},
-    marker: {
-      show: false,
-    },
-    x: { show: false },
-    y: {
-      title: {
-        formatter: (seriesName) => `Ticket`,
-      },
-    },
-  },
-
-}
+};
 
 export const areaChartOptionsInAnalytics = {
   chart: {
@@ -257,7 +248,7 @@ export const areaChartOptionsInAnalytics = {
       opacityTo: 0,
     },
   },
-}
+};
 
 export const areaCharOptionsInChartsPage = {
   chart: {
@@ -277,7 +268,7 @@ export const areaCharOptionsInChartsPage = {
     enabled: false,
   },
   stroke: {
-    colors:["#fff"],
+    colors: ["#fff"],
     curve: "smooth",
     width: 3,
   },
@@ -299,9 +290,9 @@ export const areaCharOptionsInChartsPage = {
     },
   },
   fill: {
-    colors:["#fff"],
+    colors: ["#fff"],
     type: "solid",
-    opacity : 0.3
+    opacity: 0.3,
   },
   tooltip: {
     fillSeriesColor: false,
@@ -317,12 +308,14 @@ export const areaCharOptionsInChartsPage = {
       },
     },
   },
-
-}
+};
 
 export const circleChartInChartPage = {
   chart: {
     type: "donut",
+  },
+  stroke: {
+    show: false,
   },
   colors: ["#e11d48", "#0ea5e9", "#8b5cf6"],
   labels: ["youtube", "Facebook", "Twitter"],
@@ -341,4 +334,20 @@ export const circleChartInChartPage = {
   dataLabels: {
     enabled: false,
   },
-}
+  legend: {
+    position: "bottom",
+    offsetY: 10,
+    markers: {
+      size: 7,
+      shape: "circle",
+      offsetX: -5,
+      strokeWidth: 0,
+    },
+    itemMargin: {
+      horizontal: 15,
+    },
+    labels: {
+      colors: "#9ca3af",
+    },
+  },
+};

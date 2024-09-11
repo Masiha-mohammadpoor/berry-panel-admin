@@ -3,9 +3,11 @@ import TrendingDownIcon from "@mui/icons-material/TrendingDown";
 import {
   Button,
   IconButton,
+  styled,
   Table,
   TableBody,
   TableCell,
+  tableCellClasses,
   TableContainer,
   TableHead,
   TableRow,
@@ -24,6 +26,8 @@ import Image from "next/image";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import dynamic from "next/dynamic";
 import { areaChartOptionsInAnalytics } from "@/constants/chartOptions";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const revenueData = [
@@ -163,12 +167,31 @@ const customersData = [
 ];
 
 const Analytics = () => {
+  const { theme: darkmode } = useTheme();
+  const [theme, setTheme] = useState("dark");
+  useEffect(() => {
+    setTheme(darkmode);
+  }, [darkmode]);
+
+  const StyledTableCell = styled(TableCell)({
+    [`&.${tableCellClasses.head}`]: {
+      backgroundColor: theme === "dark" && "#1e293b",
+      borderColor: theme === "dark" && "#4b5563",
+      color: theme === "dark" && "white",
+    },
+  });
+
+  const StyledTableRow = styled(TableRow)({
+    color: theme === "dark" && "white",
+    borderColor: theme === "dark" && "#4b5563",
+  });
+
   return (
     <section className="w-full">
       {/*  */}
       <article className="grid grid-cols-6 gap-6">
         {/* 1 */}
-        <div className="relative overflow-hidden col-span-6 lg:col-span-4 bg-light rounded-md pt-8 row-span-6">
+        <div className="relative overflow-hidden col-span-6 lg:col-span-4 bg-light dark:bg-dark-800 rounded-md pt-8 row-span-6">
           <div className="px-5">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-y-3">
               <h2 className="font-semibold text-xl">Market Share</h2>
@@ -180,19 +203,19 @@ const Analytics = () => {
             <p className="text-sm mt-3">Department wise monthly sales report</p>
             <div className="mt-5 flex flex-col sm:flex-row gap-6">
               <div className="flex items-center gap-x-2">
-                <IconButton className="flex justify-center items-center p-2 rounded-lg bg-primary-200 text-primary-600 hover:bg-primary-200">
+                <IconButton className="flex justify-center items-center p-2 rounded-lg bg-primary-200 text-primary-600 dark:text-primary-200 dark:bg-primary-600 hover:bg-primary-200">
                   <LuFacebook />
                 </IconButton>
                 <p className="font-bold">+ 45.36%</p>
               </div>
               <div className="flex items-center gap-x-2">
-                <IconButton className="flex justify-center items-center p-2 rounded-lg bg-secondary-200 text-secondary-600 hover:bg-secondary-200">
+                <IconButton className="flex justify-center items-center p-2 rounded-lg bg-secondary-200 text-secondary-600 dark:text-secondary-200 dark:bg-secondary-600 hover:bg-secondary-200">
                   <FiTwitter />
                 </IconButton>
                 <p className="font-bold">- 50.69%</p>
               </div>
               <div className="flex items-center gap-x-2">
-                <IconButton className="flex justify-center items-center p-2 rounded-lg bg-error-200 text-error-600 hover:bg-error-200">
+                <IconButton className="flex justify-center items-center p-2 rounded-lg bg-error-200 text-error-600 dark:text-error-200 dark:bg-error-600 hover:bg-error-200">
                   <FiYoutube />
                 </IconButton>
                 <p className="font-bold">+ 16.85%</p>
@@ -203,7 +226,12 @@ const Analytics = () => {
           <div className="mt-16">
             <Chart
               height={170}
-              options={areaChartOptionsInAnalytics}
+              options={{
+                ...areaChartOptionsInAnalytics,
+                tooltip: {
+                  theme: theme,
+                },
+              }}
               series={[
                 {
                   name: "Facebook",
@@ -223,10 +251,10 @@ const Analytics = () => {
           </div>
         </div>
         {/* 2 */}
-        <div className="col-span-6 lg:col-span-2 row-span-2 rounded-md bg-light grid grid-cols-2 grid-rows-2">
-          <div className="col-span-2 row-span-1 border-b border-b-gray-200 grid grid-cols-2">
+        <div className="col-span-6 lg:col-span-2 row-span-2 rounded-md bg-light dark:bg-dark-800 grid grid-cols-2 grid-rows-2">
+          <div className="col-span-2 row-span-1 border-b border-b-gray-200 dark:border-b-gray-600 grid grid-cols-2">
             <div className="flex justify-start items-center gap-x-2 pl-5 py-5">
-              <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
+              <div className="text-primary-600 bg-secondary-200 dark:bg-primary-600 dark:text-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
                 <GoShareAndroid />
               </div>
               <div>
@@ -234,8 +262,8 @@ const Analytics = () => {
                 <p className="text-gray-600 text-xs">SHARES</p>
               </div>
             </div>
-            <div className="col-span-1 flex justify-start items-center py-5 gap-x-2 pl-5 border-l border-l-gray-200">
-              <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
+            <div className="col-span-1 flex justify-start items-center py-5 gap-x-2 pl-5 border-l border-l-gray-200 dark:border-l-gray-600">
+              <div className="text-primary-600 bg-secondary-200 dark:bg-primary-600 dark:text-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
                 <MdOutlineSensors />
               </div>
               <div>
@@ -246,7 +274,7 @@ const Analytics = () => {
           </div>
           <div className="col-span-2 row-span-1 grid grid-cols-2">
             <div className="col-span-1 flex justify-start items-center gap-x-2  pl-5  py-5">
-              <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
+              <div className="text-primary-600 bg-secondary-200 dark:bg-primary-600 dark:text-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
                 <TbChartCircles />
               </div>
               <div>
@@ -254,8 +282,8 @@ const Analytics = () => {
                 <p className="text-gray-600 text-xs">RETURNS</p>
               </div>
             </div>
-            <div className="col-span-1 flex justify-start items-center gap-x-2 pl-5 py-5 border-l border-r-gray-200">
-              <div className="text-primary-600 bg-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
+            <div className="col-span-1 flex justify-start items-center gap-x-2 pl-5 py-5 border-l border-l-gray-200 dark:border-l-gray-600">
+              <div className="text-primary-600 bg-secondary-200 dark:bg-primary-600 dark:text-secondary-200 rounded-md w-10 h-10 flex justify-center items-center text-2xl">
                 <CiCreditCard1 />
               </div>
               <div>
@@ -266,8 +294,8 @@ const Analytics = () => {
           </div>
         </div>
         {/* 3 */}
-        <div className="rounded-md col-span-6 lg:col-span-2 bg-light row-span-7">
-          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
+        <div className="rounded-md col-span-6 lg:col-span-2 bg-light dark:bg-dark-800 row-span-7">
+          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200 dark:border-b-gray-600">
             Total Revenue
           </h2>
           <div className="h-[25rem] overflow-y-auto revenueList">
@@ -276,7 +304,8 @@ const Analytics = () => {
                 <div
                   key={r.id}
                   className={`flex justify-between items-center p-4 ${
-                    r.id !== revenueData.length && "border-b border-b-gray-200"
+                    r.id !== revenueData.length &&
+                    "border-b border-b-gray-200 dark:border-b-gray-600"
                   }`}
                 >
                   <div className="flex items-center gap-x-3">
@@ -323,33 +352,40 @@ const Analytics = () => {
           </div>
         </div>
         {/* 5 */}
-        <div className="bg-light rounded-md col-span-6 lg:col-span-4 row-span-9">
-          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200">
+        <div className="bg-light dark:bg-dark-800 rounded-md col-span-6 lg:col-span-4 row-span-9">
+          <h2 className="text-lg font-semibold p-5 border-b border-b-gray-200 dark:border-gray-600">
             Latest Customers
           </h2>
           <TableContainer sx={{ maxHeight: "24rem" }} className="revenueList">
-            <Table stickyHeader sx={{ minWidth: "500px" }}>
-              <TableHead>
-                <TableRow>
-                  <TableCell className="font-bold" align="left">
+            <Table
+              stickyHeader
+              sx={{ minWidth: "500px" }}
+              className="dark:text-white"
+            >
+              <TableHead sx={{ backgroundColor: "red" }}>
+                <StyledTableRow>
+                  <StyledTableCell className="font-bold" align="left">
                     #
-                  </TableCell>
-                  <TableCell className="font-bold" align="left">
+                  </StyledTableCell>
+                  <StyledTableCell className="font-bold" align="left">
                     Country
-                  </TableCell>
-                  <TableCell className="font-bold" align="left">
+                  </StyledTableCell>
+                  <StyledTableCell className="font-bold" align="left">
                     Name
-                  </TableCell>
-                  <TableCell className="font-bold" align="center">
+                  </StyledTableCell>
+                  <StyledTableCell className="font-bold" align="center">
                     Average
-                  </TableCell>
-                </TableRow>
+                  </StyledTableCell>
+                </StyledTableRow>
               </TableHead>
               <TableBody>
                 {customersData.map((c) => {
                   return (
-                    <TableRow key={c.id}>
-                      <TableCell align="left" className="w-fit">
+                    <StyledTableRow key={c.id}>
+                      <TableCell
+                        align="left"
+                        className="w-fit dark:border-gray-600"
+                      >
                         <div>
                           <Image
                             src={c.flag}
@@ -359,16 +395,31 @@ const Analytics = () => {
                           />
                         </div>
                       </TableCell>
-                      <TableCell align="left">{c.country}</TableCell>
-                      <TableCell align="left">{c.name}</TableCell>
-                      <TableCell align="center">{c.average}%</TableCell>
-                    </TableRow>
+                      <TableCell
+                        className="dark:text-white dark:border-gray-600"
+                        align="left"
+                      >
+                        {c.country}
+                      </TableCell>
+                      <TableCell
+                        className="dark:text-white dark:border-gray-600"
+                        align="left"
+                      >
+                        {c.name}
+                      </TableCell>
+                      <TableCell
+                        className="dark:text-white dark:border-gray-600"
+                        align="center"
+                      >
+                        {c.average}%
+                      </TableCell>
+                    </StyledTableRow>
                   );
                 })}
               </TableBody>
             </Table>
           </TableContainer>
-          <div className="p-5 border-t-2 border-b-gray-200 flex justify-end items-center">
+          <div className="p-5 border-t-2 border-t-gray-200 dark:border-t-gray-600 flex justify-end items-center">
             <Button variant="text" className="capitalize text-sm">
               View All Latest Customers
             </Button>

@@ -1,11 +1,12 @@
-import { useEffect } from "react";
 import useLocalStorage from "use-local-storage";
 
 const useMenuMobile = () => {
-  const [openMenuMobile, setOpenMenuMobile] = useLocalStorage("openMenuMobile", false);
+  const [openMenuMobile, setOpenMenuMobile] = useLocalStorage(
+    "openMenuMobile",
+    false
+  );
 
-  return {openMenuMobile , setOpenMenuMobile};
+  return { openMenuMobile, setOpenMenuMobile };
+};
 
-}
- 
 export default useMenuMobile;
